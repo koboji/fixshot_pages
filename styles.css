@@ -38,6 +38,10 @@ a {
   padding-bottom: 8px;
 }
 
+.hero-lp {
+  padding-top: 68px;
+}
+
 .hero-inner,
 .content {
   width: min(1040px, calc(100% - 40px));
@@ -57,6 +61,17 @@ a {
   margin: 0;
   font-size: clamp(2rem, 4vw, 3.6rem);
   line-height: 1.02;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.hero-copy {
+  min-width: 0;
 }
 
 .lead {
@@ -83,6 +98,80 @@ a {
   background: var(--accent-soft);
   color: var(--text);
   text-decoration: none;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.hero-secondary-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.hero-points {
+  display: grid;
+  gap: 10px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-points li {
+  padding-left: 18px;
+  position: relative;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.hero-points li::before {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.hero-panel {
+  min-width: 0;
+}
+
+.hero-panel-card {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: linear-gradient(180deg, rgba(255, 220, 220, 0.72) 0%, rgba(255, 255, 255, 0.96) 100%);
+  padding: 20px;
+}
+
+.hero-panel-label {
+  margin: 0 0 14px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.hero-panel-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text);
+  line-height: 1.7;
 }
 
 .content {
@@ -160,6 +249,81 @@ a {
   margin-top: 18px;
 }
 
+.problem-grid,
+.pricing-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.problem-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.problem-card {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: linear-gradient(180deg, rgba(255, 220, 220, 0.32) 0%, #fff 100%);
+  padding: 18px;
+}
+
+.problem-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.04rem;
+}
+
+.problem-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.pricing-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pricing-card {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  padding: 20px;
+}
+
+.pricing-card.featured {
+  background: linear-gradient(180deg, rgba(255, 220, 220, 0.6) 0%, #fff 100%);
+}
+
+.pricing-name {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.pricing-price {
+  margin: 10px 0 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.pricing-price span {
+  margin-left: 4px;
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.pricing-list {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
 .contact-card,
 .policy-card {
   border: 1px solid var(--line);
@@ -235,8 +399,11 @@ a {
     width: min(100% - 28px, 1040px);
   }
 
+  .hero-layout,
   .card-grid,
-  .info-grid {
+  .info-grid,
+  .problem-grid,
+  .pricing-grid {
     grid-template-columns: 1fr;
   }
 }

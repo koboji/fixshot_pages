@@ -34,6 +34,10 @@ a {
   padding: 56px 20px 28px;
 }
 
+.hero-compact {
+  padding-bottom: 8px;
+}
+
 .hero-inner,
 .content {
   width: min(1040px, calc(100% - 40px));
@@ -154,6 +158,71 @@ a {
   display: grid;
   gap: 14px;
   margin-top: 18px;
+}
+
+.contact-card,
+.policy-card {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+  padding: 20px;
+}
+
+.contact-card p,
+.policy-card p {
+  margin: 0;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.policy-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+.contact-actions {
+  margin-top: 18px;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+}
+
+.policy-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.site-footer {
+  padding: 0 20px 28px;
+}
+
+.site-footer-inner {
+  width: min(1040px, calc(100% - 40px));
+  margin: 0 auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.site-footer-inner a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-footer-inner a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 760px) {

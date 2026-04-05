@@ -1,140 +1,182 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FixShot 使い方ガイド</title>
-    <meta name="description" content="FixShot の基本操作、共有の流れ、よくある質問をまとめたサポートページです。">
-    <link rel="stylesheet" href="./styles.css">
-  </head>
-  <body>
-    <header class="hero hero-compact">
-      <div class="hero-inner">
-        <p class="eyebrow">FixShot Guide</p>
-        <h1>FixShot の使い方</h1>
-        <p class="lead">ページをキャプチャして、気になる箇所を囲って、コメント付きで共有するまでをわかりやすくまとめています。</p>
-        <nav class="hero-links">
-          <a href="#quickstart">最初の3ステップ</a>
-          <a href="#sharing">共有のしかた</a>
-          <a href="#faq">よくある質問</a>
-          <a href="#contact">お問い合わせ</a>
-        </nav>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>使い方ガイド | FixShot</title>
+  <meta name="description" content="FixShotの使い方ガイド。インストールからキャプチャ、注釈、共有までの基本操作を説明します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a href="./" class="header-logo"><i class="ri-camera-lens-fill"></i> FixShot</a>
+      <nav class="header-nav">
+        <a href="./features.html">機能</a>
+        <a href="./pricing.html">料金</a>
+        <a href="./guide.html" class="active">使い方</a>
+        <a href="./faq.html">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a href="https://app.fixshot.jp/auth/login" class="btn btn--outline">ログイン</a>
+        <a href="#" class="btn btn--primary"><i class="ri-chrome-fill"></i> Chromeに追加</a>
+        <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main class="content">
-      <section id="quickstart" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Quick Start</p>
-          <h2>最初の3ステップ</h2>
-        </div>
-        <div class="card-grid">
-          <article class="card">
-            <span class="step">1</span>
-            <h3>リストを選ぶ</h3>
-            <p>拡張ボタンを押して、追加先のリストを選びます。必要ならその場で新規リストも作れます。</p>
-          </article>
-          <article class="card">
-            <span class="step">2</span>
-            <h3>この画面を追加する</h3>
-            <p><strong>この画面をリストに追加</strong> を押すと、今見ているページのスクリーンショットが FixShot に追加されます。</p>
-          </article>
-          <article class="card">
-            <span class="step">3</span>
-            <h3>囲ってコメントを入れる</h3>
-            <p>画像上で気になる箇所をドラッグして囲い、コメントを入力します。作業完了・確認完了もあとから切り替えられます。</p>
-          </article>
-        </div>
-      </section>
+  <!-- ===== Page Hero ===== -->
+  <section class="page-hero">
+    <div class="container fade-in">
+      <span class="section-eyebrow">Guide</span>
+      <h1 class="page-hero-title">使い方ガイド</h1>
+      <p class="page-hero-subtitle">FixShotの基本操作を説明します</p>
+    </div>
+  </section>
 
-      <section class="section">
-        <div class="section-heading">
-          <p class="eyebrow">How To Use</p>
-          <h2>基本操作</h2>
-        </div>
-        <div class="info-grid">
-          <article class="info-card">
-            <h3>リスト一覧</h3>
-            <p>保存したリストは <strong>リスト一覧</strong> から確認できます。フォルダ分け、並べ替え、共有中のリスト確認もここから行えます。</p>
-          </article>
-          <article class="info-card">
-            <h3>ページの追加</h3>
-            <p>同じリストに複数ページを追加できます。別ページの比較や、流れのあるレビューにも向いています。</p>
-          </article>
-          <article class="info-card">
-            <h3>タスク管理</h3>
-            <p>右側のタスクリストでは、<strong>すべて / 未作業 / 確認完了</strong> で絞り込みできます。コメントの編集や削除も可能です。</p>
-          </article>
-          <article class="info-card">
-            <h3>確認の流れ</h3>
-            <p>共有先では <strong>作業完了</strong> を更新できます。共有元では <strong>確認完了</strong> を管理できます。</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="sharing" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Sharing</p>
-          <h2>共有のしかた</h2>
-        </div>
-        <div class="flow">
-          <article class="flow-step">
-            <h3>1. リストを作る</h3>
-            <p>レビューしたいページを追加し、必要な矩形とコメントを入れます。</p>
-          </article>
-          <article class="flow-step">
-            <h3>2. 共有リンクを作る</h3>
-            <p>編集画面の <strong>共有リンク</strong> から共有を開始します。共有中のリストはライブラリでも見分けられます。</p>
-          </article>
-          <article class="flow-step">
-            <h3>3. 相手に送る</h3>
-            <p>共有リンクを送ると、相手はブラウザで内容を確認できます。作業完了は共有先からも更新できます。</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="faq" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">FAQ</p>
-          <h2>よくある質問</h2>
-        </div>
-        <div class="faq-list">
-          <article class="faq-item">
-            <h3>ログインしないと使えませんか？</h3>
-            <p>ローカルでの作業は使えますが、他の人と共有するにはログインが必要です。</p>
-          </article>
-          <article class="faq-item">
-            <h3>保存先はどこですか？</h3>
-            <p>通常の作業データは拡張のローカル保存、共有したリストはクラウド側にも保存されます。</p>
-          </article>
-          <article class="faq-item">
-            <h3>確認側では何ができますか？</h3>
-            <p>確認側では主に共有内容の閲覧と <strong>作業完了</strong> の更新ができます。確認完了は共有元で管理します。</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Contact</p>
-          <h2>お問い合わせ</h2>
-        </div>
-        <div class="contact-card">
-          <p>FixShot についてのご質問や不具合のご連絡は、下のフォームからお願いします。</p>
-          <div class="contact-actions">
-            <a class="contact-button" href="https://forms.gle/FvWSjGenYFNJZSbT7" target="_blank" rel="noreferrer">お問い合わせフォームを開く</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="site-footer-inner">
-        <span>© FixShot</span>
-        <a href="./index.html">トップへ戻る</a>
-        <a href="./terms.html">利用規約</a>
-        <a href="./privacy.html">プライバシーポリシー</a>
+  <!-- ===== Quick Start ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-eyebrow">Quick Start</span>
+        <h2 class="section-title">クイックスタート</h2>
+        <p class="section-subtitle">3ステップで始められます</p>
       </div>
-    </footer>
-  </body>
+      <div class="steps-grid stagger">
+        <div class="step-card fade-in">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Chrome拡張を追加</h3>
+          <p class="step-text">Chrome ウェブストアからFixShotを追加。インストールは数秒で完了します。</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-number">2</div>
+          <h3 class="step-title">ページをキャプチャ&amp;注釈</h3>
+          <p class="step-text">確認したいページを開いてキャプチャ。気になる箇所を囲んでコメントを残します。</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-number">3</div>
+          <h3 class="step-title">リンクで共有</h3>
+          <p class="step-text">共有リンクを発行して相手に送るだけ。相手はログイン不要でブラウザから確認できます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Basic Operations ===== -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-eyebrow">Basics</span>
+        <h2 class="section-title">基本操作</h2>
+      </div>
+      <div class="card-grid card-grid--2 stagger">
+        <div class="card fade-in">
+          <div class="card-icon"><i class="ri-list-check-2"></i></div>
+          <h3 class="card-title">リスト管理</h3>
+          <p class="card-text">レビューリストを作成して案件ごとに管理。リスト名を変更したり、不要なリストを削除できます。</p>
+          <div class="image-placeholder">[リスト管理のスクリーンショット]</div>
+        </div>
+        <div class="card fade-in">
+          <div class="card-icon"><i class="ri-add-circle-line"></i></div>
+          <h3 class="card-title">ページの追加</h3>
+          <p class="card-text">キャプチャボタンで表示中のページを追加。画像ファイルのアップロードにも対応しています。</p>
+          <div class="image-placeholder">[ページ追加のスクリーンショット]</div>
+        </div>
+        <div class="card fade-in">
+          <div class="card-icon"><i class="ri-edit-box-line"></i></div>
+          <h3 class="card-title">注釈の作成</h3>
+          <p class="card-text">スクリーンショット上で修正箇所を矩形で囲み、コメントを追加。視覚的に伝わる指示が作れます。</p>
+          <div class="image-placeholder">[注釈作成のスクリーンショット]</div>
+        </div>
+        <div class="card fade-in">
+          <div class="card-icon"><i class="ri-checkbox-circle-line"></i></div>
+          <h3 class="card-title">タスク管理（作業完了・確認完了）</h3>
+          <p class="card-text">各注釈に「作業完了」「確認完了」のチェックを付けて進捗を管理。対応漏れを防ぎます。</p>
+          <div class="image-placeholder">[タスク管理のスクリーンショット]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Sharing Flow ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-eyebrow">Sharing</span>
+        <h2 class="section-title">共有の流れ</h2>
+      </div>
+      <div class="steps-grid stagger">
+        <div class="step-card fade-in">
+          <div class="step-number">1</div>
+          <h3 class="step-title">ログイン</h3>
+          <p class="step-text">Googleアカウントでログインします。共有機能の利用にはログインが必要です。</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-number">2</div>
+          <h3 class="step-title">共有ボタン</h3>
+          <p class="step-text">エディター画面の共有ボタンをクリックして、共有リンクを発行します。</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-number">3</div>
+          <h3 class="step-title">リンクをコピーして相手に送信</h3>
+          <p class="step-text">生成されたリンクをコピーして、チャットやメールで相手に送るだけ。相手はログイン不要で閲覧できます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="container fade-in">
+      <h2 class="cta-title">わからないことがあれば</h2>
+      <p class="cta-text">お気軽にお問い合わせください。</p>
+      <a href="./contact.html" class="btn btn--white btn--lg">お問い合わせ</a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><i class="ri-camera-lens-fill"></i> FixShot</div>
+          <p class="footer-about">Webページのスクリーンショットに注釈を付けて共有できる、修正依頼・レビュー管理ツール。</p>
+        </div>
+        <div class="footer-column">
+          <h4>製品</h4>
+          <ul>
+            <li><a href="./features.html">機能</a></li>
+            <li><a href="./pricing.html">料金プラン</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>サポート</h4>
+          <ul>
+            <li><a href="./guide.html">使い方</a></li>
+            <li><a href="./faq.html">FAQ</a></li>
+            <li><a href="./contact.html">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>会社情報</h4>
+          <ul>
+            <li><a href="./company.html">運営会社</a></li>
+            <li><a href="./terms.html">利用規約</a></li>
+            <li><a href="./privacy.html">プライバシーポリシー</a></li>
+            <li><a href="./tokushoho.html">特定商取引法に基づく表記</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; FixShot</span>
+      </div>
+    </div>
+  </footer>
+  <script src="./assets/js/main.js"></script>
+</body>
 </html>

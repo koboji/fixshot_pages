@@ -661,6 +661,13 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-light);
 }
 
+.pricing-annual {
+  font-size: 0.82rem;
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
 .pricing-desc {
   font-size: 0.9rem;
   color: var(--text-muted);

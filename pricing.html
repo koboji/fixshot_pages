@@ -42,13 +42,17 @@
   <!-- ===== Pricing Cards ===== -->
   <section class="section">
     <div class="container">
+      <div class="pricing-toggle fade-in">
+        <button id="billingMonthly" class="pricing-toggle-btn is-active" type="button">月額</button>
+        <button id="billingAnnual" class="pricing-toggle-btn" type="button">年額 <span class="pricing-toggle-save">2ヶ月分お得</span></button>
+      </div>
       <div class="pricing-grid fade-in">
         <div class="pricing-card">
           <h3 class="pricing-plan-name">Free</h3>
           <p class="pricing-price"><span class="currency">&yen;</span>0<span class="period"> /月</span></p>
           <p class="pricing-desc">まず操作感を試したい方に</p>
           <ul class="pricing-features">
-            <li><i class="ri-check-circle-fill"></i> レビューリスト 1件</li>
+            <li><i class="ri-check-circle-fill"></i> プロジェクト 3件</li>
             <li><i class="ri-check-circle-fill"></i> スクショ追加&amp;注釈</li>
             <li><i class="ri-check-circle-fill"></i> 作業完了チェック</li>
             <li class="is-disabled"><i class="ri-close-circle-line"></i> 共有リンクの発行</li>
@@ -57,16 +61,15 @@
         </div>
         <div class="pricing-card pricing-card--featured">
           <h3 class="pricing-plan-name">Pro</h3>
-          <p class="pricing-price"><span class="currency">&yen;</span>600<span class="period"> /月</span></p>
-          <p class="pricing-annual">年額プラン: &yen;6,000/年（&yen;500/月相当）</p>
+          <p class="pricing-price" id="proPrice"><span class="currency">&yen;</span><span id="proPriceAmount">600</span><span class="period" id="proPricePeriod"> /月</span></p>
           <p class="pricing-desc">複数案件やチーム利用に最適</p>
           <ul class="pricing-features">
-            <li><i class="ri-check-circle-fill"></i> レビューリスト 無制限</li>
+            <li><i class="ri-check-circle-fill"></i> プロジェクト 無制限</li>
             <li><i class="ri-check-circle-fill"></i> 共有リンクの発行・管理</li>
             <li><i class="ri-check-circle-fill"></i> 複数リストのクラウド同期</li>
             <li><i class="ri-check-circle-fill"></i> フォルダ整理</li>
           </ul>
-          <a href="#" class="btn btn--primary">Proを始める</a>
+          <a href="#" class="btn btn--primary">Proにアップグレード</a>
         </div>
       </div>
     </div>
@@ -78,7 +81,6 @@
       <div class="section-header fade-in">
         <span class="section-eyebrow">Compare Plans</span>
         <h2 class="section-title">機能比較表</h2>
-        <p class="section-subtitle">Free と Pro の違いを一覧で比較できます</p>
       </div>
       <div class="compare-table-wrap fade-in">
         <table class="compare-table">
@@ -86,7 +88,7 @@
             <tr>
               <th class="compare-feature-col"></th>
               <th class="compare-plan-col">Free</th>
-              <th class="compare-plan-col compare-plan-col--featured">Pro<span class="compare-plan-price">&yen;600/月</span></th>
+              <th class="compare-plan-col compare-plan-col--featured">Pro</th>
             </tr>
           </thead>
           <tbody>

@@ -94,6 +94,26 @@
     });
   });
 
+  /* ---- Pricing toggle (monthly / annual) ---- */
+  const monthlyBtn = document.querySelector('#billingMonthly');
+  const annualBtn = document.querySelector('#billingAnnual');
+  const proPriceAmount = document.querySelector('#proPriceAmount');
+  const proPricePeriod = document.querySelector('#proPricePeriod');
+  if (monthlyBtn && annualBtn && proPriceAmount && proPricePeriod) {
+    monthlyBtn.addEventListener('click', () => {
+      monthlyBtn.classList.add('is-active');
+      annualBtn.classList.remove('is-active');
+      proPriceAmount.textContent = '600';
+      proPricePeriod.textContent = ' /月';
+    });
+    annualBtn.addEventListener('click', () => {
+      annualBtn.classList.add('is-active');
+      monthlyBtn.classList.remove('is-active');
+      proPriceAmount.textContent = '6,000';
+      proPricePeriod.textContent = ' /年';
+    });
+  }
+
   /* ---- Parallax-lite for hero decorative blobs ---- */
   const hero = document.querySelector('.hero');
   if (hero) {

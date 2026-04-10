@@ -209,6 +209,11 @@ h1, h2, h3, h4, h5, h6 {
 .header-logo i {
   font-size: 1.8rem;
 }
+.header-logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
 
 .header-nav {
   display: flex;
@@ -365,10 +370,45 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-muted);
   font-size: 0.9rem;
 }
-
-.hero-image img {
+.hero-composite {
+  position: relative;
+}
+.hero-screenshot {
   width: 100%;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+}
+.hero-popup {
+  position: absolute;
+  bottom: -30px;
+  right: -20px;
+  width: 38%;
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  border: 1px solid var(--border-light);
+}
+.feature-screenshot {
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+}
+.feature-row-image .feature-screenshot--small,
+.card .feature-screenshot--small {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+.feature-row-image .feature-screenshot--xs,
+.card .feature-screenshot--xs {
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+}
+
+.hero-image img:not(.hero-popup) {
+  width: 100%;
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border-light);
 }
@@ -425,10 +465,6 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--border-light);
   transition: all var(--transition);
 }
-.card:hover {
-  box-shadow: var(--shadow-md);
-}
-
 .card-icon {
   width: 64px;
   height: 64px;
@@ -442,6 +478,23 @@ h1, h2, h3, h4, h5, h6 {
 .card-icon i {
   font-size: 28px;
   color: var(--primary);
+}
+
+.card--horizontal .card-header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+.card--horizontal .card-header-row .card-icon {
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+.card--horizontal .card-header-text .card-title {
+  margin-bottom: 8px;
+}
+.card--horizontal .card-header-text .card-text {
+  margin-bottom: 0;
 }
 
 .card-title {
@@ -459,9 +512,7 @@ h1, h2, h3, h4, h5, h6 {
 .section--alt .card {
   box-shadow: var(--shadow-sm);
 }
-.section--alt .card:hover {
-  box-shadow: var(--shadow-md);
-}
+/* card hover shadow removed */
 
 /* Static cards: no hover effects (guide page etc.) */
 .card--static {
@@ -501,6 +552,24 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 16px;
   line-height: 1.3;
 }
+.pro-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 2px 14px 5px;
+  border-radius: var(--radius-pill);
+  vertical-align: middle;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+.pro-label--sm {
+  font-size: 0.75rem;
+  padding: 2px 10px 4px;
+}
 
 .feature-row-text {
   font-size: 1rem;
@@ -534,7 +603,7 @@ h1, h2, h3, h4, h5, h6 {
 .feature-row-image img,
 .feature-row-image .image-placeholder {
   width: 100%;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
 }
 
@@ -590,6 +659,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Step connectors */
+.step-image {
+  margin-top: 20px;
+  max-width: 80%;
+  border-radius: var(--radius-md);
+}
+.step-image-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.step-image-row .step-image {
+  max-width: 45%;
+  margin-top: 0;
+}
+
 .step-card:not(:last-child)::after {
   content: '';
   position: absolute;
@@ -608,6 +693,12 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 880px;
   margin: 0 auto;
 }
+.pricing-grid--3col {
+  max-width: 1100px;
+  gap: 28px;
+  position: relative;
+  padding-top: 48px;
+}
 
 .pricing-card {
   background: var(--bg-white);
@@ -617,33 +708,76 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--shadow-sm);
   position: relative;
   overflow: hidden;
-  border: 2px solid transparent;
+  border: 2px solid #E5E7EB;
   transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.pricing-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.pricing-card-body .pricing-features {
+  flex: 1;
 }
 
 .pricing-card--featured {
   border-color: var(--primary);
-  transform: scale(1.04);
   box-shadow: var(--shadow-md);
 }
 
-.pricing-card--featured::before {
-  content: 'チームにおすすめ';
+/* Ribbon label for featured card */
+.pricing-ribbon {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 20px;
+  right: -34px;
   background: var(--primary);
   color: #fff;
-  padding: 5px 14px;
-  border-radius: var(--radius-pill);
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
+  padding: 5px 40px;
+  transform: rotate(45deg);
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(255, 46, 147, 0.3);
+}
+.pricing-card--guest {
+  background: var(--bg-white);
+}
+.pricing-card--free {
+  overflow: hidden;
+}
+.pricing-ribbon--gray {
+  background: #9CA3AF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+.pricing-guest-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #F3F4F6;
+  color: var(--text-muted);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 500;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+.pricing-pro-tagline {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
 }
 
 .pricing-plan-name {
   font-size: 1.3rem;
   margin-bottom: 8px;
+  min-height: 1.6em;
+  display: flex;
+  align-items: center;
 }
 
 .pricing-price {
@@ -660,22 +794,36 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   color: var(--text-light);
 }
+.pricing-tax {
+  font-size: 0.75rem;
+}
 
 .pricing-toggle {
+  display: none;
+}
+/* (pricing-card-col removed — cards are flat flex children) */
+.pricing-toggle-above {
+  position: absolute;
+  top: -30px;
+  /* Proカード（3列目）の中央に配置:
+     Proカード左端 = 66.66% + gap(28px*2/3=19px) ≈ calc(66.66% + 19px)
+     Proカード幅 ≈ calc(33.33% - 19px)
+     トグル幅 = calc(33.33% - 100px)
+     left = カード左端 + (カード幅 - トグル幅) / 2
+          = calc(66.66% + 19px) + calc((100px - 19px) / 2)
+          = calc(66.66% + 59.5px) */
+  left: calc(66.66% + 64px);
+  width: calc(33.33% - 110px);
   display: flex;
   justify-content: center;
   gap: 0;
-  margin-bottom: 48px;
-  background: var(--bg-light);
+  background: #f1f1f1;
   border-radius: var(--radius-pill);
   padding: 4px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .pricing-toggle-btn {
-  padding: 10px 28px;
+  padding: 10px 25px;
   border: 0;
   border-radius: var(--radius-pill);
   background: transparent;
@@ -712,16 +860,84 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 24px;
   border-bottom: 1px solid #E5E7EB;
 }
+.pricing-desc--strong {
+  color: var(--text-body);
+  font-weight: 600;
+}
+
+.pricing-plan-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 0;
+}
+.pricing-plan-header .pricing-plan-name {
+  margin-bottom: 0;
+}
+
+/* Inline toggle inside Pro card */
+.pricing-toggle-inline {
+  display: flex;
+  background: var(--bg-light);
+  border-radius: var(--radius-pill);
+  padding: 2px;
+}
+.pricing-toggle-btn-sm {
+  padding: 4px 12px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-light);
+  font-size: 0.7rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.pricing-toggle-btn-sm.is-active {
+  background: var(--bg-white);
+  color: var(--text-dark);
+  box-shadow: var(--shadow-sm);
+  font-weight: 700;
+}
+.pricing-toggle-save-sm {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 1px 5px;
+  border-radius: var(--radius-pill);
+}
 
 .pricing-features {
-  margin-bottom: 32px;
+  margin-bottom: 0;
+}
+.pricing-features li i.ri-check-line {
+  color: var(--primary);
+  font-weight: 700;
+}
+.pricing-features--compact li {
+  margin-bottom: 6px;
+}
+.pricing-features li.is-highlight strong {
+  background: linear-gradient(transparent 60%, rgba(255, 46, 147, 0.15) 60%);
+}
+.pricing-includes {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  font-weight: 500;
 }
 .pricing-features li {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 0.95rem;
-  margin-bottom: 14px;
+  margin-bottom: 6px;
 }
 .pricing-features li i {
   font-size: 1.2rem;
@@ -741,11 +957,12 @@ h1, h2, h3, h4, h5, h6 {
 .pricing-card .btn {
   width: 100%;
   justify-content: center;
+  margin-top: 24px;
 }
 
 /* --- Comparison Table --- */
 .compare-table-wrap {
-  max-width: 820px;
+  max-width: 920px;
   margin: 0 auto;
   overflow-x: auto;
 }
@@ -766,11 +983,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .compare-feature-col {
   text-align: left !important;
-  width: 50%;
+  width: 40%;
 }
 
 .compare-plan-col {
-  width: 25%;
+  width: 20%;
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--text-dark);
@@ -780,6 +997,10 @@ h1, h2, h3, h4, h5, h6 {
 .compare-plan-col--featured {
   color: var(--primary);
   position: relative;
+}
+.compare-plan-col--guest {
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
 .compare-plan-price {
@@ -893,7 +1114,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all var(--transition);
 }
 .faq-item:hover {
-  border-color: var(--primary-light);
+  border-color: var(--border-light);
 }
 .faq-item[open] {
   box-shadow: var(--shadow-sm);
@@ -926,7 +1147,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .faq-item summary:hover {
-  background: var(--bg-light);
+  background: transparent;
 }
 
 .faq-answer {
@@ -1050,6 +1271,10 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary);
   font-size: 1.5rem;
 }
+.footer-logo-img {
+  height: 24px;
+  width: auto;
+}
 
 .footer-about {
   font-size: 0.9rem;
@@ -1155,7 +1380,7 @@ h1, h2, h3, h4, h5, h6 {
   .card-grid--3 { grid-template-columns: repeat(2, 1fr); }
 
   .pricing-grid { flex-direction: column; max-width: 420px; }
-  .pricing-card--featured { transform: none; }
+  .pricing-grid--3col { max-width: 420px; }
 
   .steps-grid { grid-template-columns: 1fr; gap: 24px; }
   .step-card::after { display: none; }

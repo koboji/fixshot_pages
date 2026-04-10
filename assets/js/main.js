@@ -95,24 +95,29 @@
   });
 
   /* ---- Pricing toggle (monthly / annual) ---- */
-  const monthlyBtn = document.querySelector('#billingMonthly');
-  const annualBtn = document.querySelector('#billingAnnual');
-  const proPriceAmount = document.querySelector('#proPriceAmount');
-  const proPricePeriod = document.querySelector('#proPricePeriod');
-  if (monthlyBtn && annualBtn && proPriceAmount && proPricePeriod) {
-    monthlyBtn.addEventListener('click', () => {
-      monthlyBtn.classList.add('is-active');
-      annualBtn.classList.remove('is-active');
-      proPriceAmount.textContent = '600';
-      proPricePeriod.textContent = ' /月';
+  document.querySelectorAll('.pricing-toggle-above').forEach((toggle) => {
+    const mBtn = toggle.querySelector('.pricing-toggle-btn:first-child');
+    const aBtn = toggle.querySelector('.pricing-toggle-btn:last-child');
+    const grid = toggle.closest('.pricing-grid');
+    const amount = grid?.querySelector('[id$="PriceAmount"]');
+    const period = grid?.querySelector('[id$="PricePeriod"]');
+    const proBtn = grid?.querySelector('.pricing-card--featured .btn');
+    if (!mBtn || !aBtn || !amount || !period) return;
+    mBtn.addEventListener('click', () => {
+      mBtn.classList.add('is-active');
+      aBtn.classList.remove('is-active');
+      amount.textContent = '990';
+      period.innerHTML = ' /月<span class="pricing-tax">（税込）</span>';
+      if (proBtn) proBtn.href = proBtn.dataset.monthlyUrl || '#';
     });
-    annualBtn.addEventListener('click', () => {
-      annualBtn.classList.add('is-active');
-      monthlyBtn.classList.remove('is-active');
-      proPriceAmount.textContent = '6,000';
-      proPricePeriod.textContent = ' /年';
+    aBtn.addEventListener('click', () => {
+      aBtn.classList.add('is-active');
+      mBtn.classList.remove('is-active');
+      amount.textContent = '9,900';
+      period.innerHTML = ' /年<span class="pricing-tax">（税込）</span>';
+      if (proBtn) proBtn.href = proBtn.dataset.yearlyUrl || '#';
     });
-  }
+  });
 
   /* ---- Parallax-lite for hero decorative blobs ---- */
   const hero = document.querySelector('.hero');

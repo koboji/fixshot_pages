@@ -2,6 +2,8 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>プライバシーポリシー | FixShot</title>
   <meta name="description" content="FixShotのプライバシーポリシーです。">
@@ -23,7 +25,6 @@
         <a href="./faq.html">FAQ</a>
       </nav>
       <div class="header-actions">
-        <a href="https://app.fixshot.jp/auth/login" class="btn btn--outline">ログイン</a>
         <a href="#" class="btn btn--primary"><i class="ri-chrome-fill"></i> Chromeに追加</a>
         <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
       </div>
@@ -45,27 +46,78 @@
       <div class="policy-stack fade-in">
         <article class="policy-card">
           <h2>1. 取得する情報</h2>
-          <p>FixShot では、リスト名、ページ情報、注釈内容、共有設定、ログイン時の識別情報など、サービス提供に必要な範囲の情報を取り扱います。</p>
+          <p>FixShot では、サービス提供に必要な範囲で以下の情報を取得・取り扱います。</p>
+          <ul>
+            <li><strong>アカウント情報</strong>: Googleログイン時のメールアドレス、表示名</li>
+            <li><strong>スクリーンショット</strong>: ユーザーがキャプチャしたWebページの画像、およびアップロードした画像ファイル</li>
+            <li><strong>プロジェクトデータ</strong>: プロジェクト名、フォルダ構成、ページURL・タイトル</li>
+            <li><strong>注釈データ</strong>: 矩形の位置・サイズ、コメントテキスト、作業完了・確認完了のステータス</li>
+            <li><strong>共有設定</strong>: 共有リンクの有無、共有先でのステータス変更</li>
+            <li><strong>設定情報</strong>: プロフィール画像、表示設定</li>
+          </ul>
         </article>
 
         <article class="policy-card">
           <h2>2. 利用目的</h2>
-          <p>取得した情報は、レビューリストの保存、共有リンクの発行、ログイン状態の管理、サービス改善、不具合対応のために利用します。</p>
+          <p>取得した情報は、以下の目的にのみ利用します。</p>
+          <ul>
+            <li>プロジェクト・注釈データの保存と表示</li>
+            <li>クラウド同期によるデバイス間のデータ共有</li>
+            <li>共有リンクの発行と管理</li>
+            <li>ログイン状態の管理</li>
+            <li>サービスの改善および不具合対応</li>
+          </ul>
+          <p>取得した情報を、広告配信やプロファイリング等の目的で利用することはありません。</p>
         </article>
 
         <article class="policy-card">
-          <h2>3. 共有機能について</h2>
-          <p>共有リンクを作成した場合、そのリンクを知っている相手が共有内容を閲覧できる状態になります。共有停止を行うと、その共有リンクは無効化されます。</p>
+          <h2>3. データの保管場所</h2>
+          <p>FixShot のデータは以下の場所に保管されます。</p>
+          <ul>
+            <li><strong>ローカル（ブラウザ内）</strong>: スクリーンショット画像、プロジェクト・注釈データは Chrome のローカルストレージに保存されます。ログアウトしてもローカルデータはブラウザ内に残ります。</li>
+            <li><strong>クラウド（サーバー）</strong>: ログイン済みユーザーのデータは、クラウドサーバー（Neon データベース、Cloudflare R2 ストレージ）に同期・保管されます。共有リンクで公開されたデータもサーバーに保管されます。</li>
+          </ul>
         </article>
 
         <article class="policy-card">
-          <h2>4. 外部サービス</h2>
-          <p>FixShot では認証や保存機能のために外部サービスを利用する場合があります。これらのサービスの利用にあたっては、各サービスの規約やポリシーが適用されることがあります。</p>
+          <h2>4. スクリーンショットの取り扱い</h2>
+          <p>スクリーンショットはユーザーの操作（ボタンクリックまたはキーボードショートカット）によってのみ取得されます。自動的にスクリーンショットを取得することはありません。</p>
+          <p>取得されたスクリーンショットは、ローカルストレージに保存されます。ログイン中のユーザーがクラウド同期を利用する場合、サーバーにも送信・保管されます。</p>
         </article>
 
         <article class="policy-card">
-          <h2>5. お問い合わせ</h2>
-          <p>プライバシーに関するお問い合わせは、<a href="https://forms.gle/FvWSjGenYFNJZSbT7" target="_blank" rel="noreferrer">お問い合わせフォーム</a>からご連絡ください。</p>
+          <h2>5. 共有機能について</h2>
+          <p>共有リンクを作成した場合、そのリンクを知っている相手が共有内容（スクリーンショット、注釈、ステータス）を閲覧できる状態になります。共有停止を行うと、その共有リンクは無効化されます。</p>
+        </article>
+
+        <article class="policy-card">
+          <h2>6. 外部サービス</h2>
+          <p>FixShot では以下の外部サービスを利用しています。</p>
+          <ul>
+            <li><strong>Google（Firebase Authentication）</strong>: ログイン認証</li>
+            <li><strong>Stripe</strong>: 決済処理（カード情報はStripeが管理し、FixShotのサーバーには保存されません）</li>
+            <li><strong>Cloudflare R2</strong>: 画像ファイルの保管</li>
+          </ul>
+          <p>各サービスの利用にあたっては、各サービスの規約およびプライバシーポリシーが適用されます。</p>
+        </article>
+
+        <article class="policy-card">
+          <h2>7. データの削除</h2>
+          <p>ユーザーは以下の方法でデータを削除できます。</p>
+          <ul>
+            <li><strong>個別削除</strong>: プロジェクト、ページ、注釈はアプリ内の操作でいつでも削除できます。ローカルおよびクラウドの両方から削除されます。</li>
+            <li><strong>アカウントデータの全削除</strong>: サーバーに保管された全てのデータの削除を希望される場合は、<a href="./contact.html">お問い合わせフォーム</a>からご連絡ください。速やかに対応いたします。</li>
+          </ul>
+        </article>
+
+        <article class="policy-card">
+          <h2>8. ポリシーの変更</h2>
+          <p>本ポリシーは、サービスの改善や法令の変更に伴い、予告なく変更されることがあります。重要な変更がある場合は、アプリ内または本ページにてお知らせします。</p>
+        </article>
+
+        <article class="policy-card">
+          <h2>9. お問い合わせ</h2>
+          <p>プライバシーに関するお問い合わせは、<a href="./contact.html">お問い合わせフォーム</a>からご連絡ください。</p>
         </article>
       </div>
     </div>
@@ -97,7 +149,7 @@
         <div class="footer-column">
           <h4>会社情報</h4>
           <ul>
-            <li><a href="./company.html">運営会社</a></li>
+            <li><a href="./company.html">運営者</a></li>
             <li><a href="./terms.html">利用規約</a></li>
             <li><a href="./privacy.html">プライバシーポリシー</a></li>
             <li><a href="./tokushoho.html">特定商取引法に基づく表記</a></li>
@@ -105,7 +157,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; FixShot</span>
+        <span>&copy; 2026 FixShot</span>
       </div>
     </div>
   </footer>

@@ -2,6 +2,8 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>よくある質問 | FixShot</title>
   <meta name="description" content="FixShotに関するよくある質問と回答。基本的な使い方、料金、共有、技術的な質問に回答します。">
@@ -23,7 +25,6 @@
         <a href="./faq.html" class="active">FAQ</a>
       </nav>
       <div class="header-actions">
-        <a href="https://app.fixshot.jp/auth/login" class="btn btn--outline">ログイン</a>
         <a href="#" class="btn btn--primary"><i class="ri-chrome-fill"></i> Chromeに追加</a>
         <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
       </div>
@@ -53,11 +54,15 @@
         </details>
         <details class="faq-item">
           <summary class="faq-question">ログインしなくても使えますか？</summary>
-          <div class="faq-answer"><p>はい。ログインなしでもリスト1件の作成・編集が可能です。共有やクラウド同期にはログインが必要です。</p></div>
+          <div class="faq-answer"><p>はい。ログインなしでもプロジェクト3件までの作成・編集が可能です。共有やクラウド同期にはログインが必要です。</p></div>
         </details>
         <details class="faq-item">
           <summary class="faq-question">対応ブラウザは？</summary>
           <div class="faq-answer"><p>Google Chrome（最新版推奨）に対応しています。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">スマートフォンから使えますか？</summary>
+          <div class="faq-answer"><p>キャプチャや注釈の作成はPC版のChrome拡張で行います。共有リンクで受け取った確認ページはスマートフォンのブラウザからも閲覧可能です。</p></div>
         </details>
       </div>
     </div>
@@ -76,8 +81,20 @@
           <div class="faq-answer"><p>いいえ、Freeプランは期限なくお使いいただけます。</p></div>
         </details>
         <details class="faq-item">
+          <summary class="faq-question">月額プランと年額プランの違いはなんですか？</summary>
+          <div class="faq-answer"><p>どちらもProプランの全機能をご利用いただけます。月額プランは990円/月（税込）、年額プランは9,900円/年（税込）で月あたり825円になるため、年額の方が2ヶ月分お得です。</p></div>
+        </details>
+        <details class="faq-item">
           <summary class="faq-question">いつでも解約できますか？</summary>
-          <div class="faq-answer"><p>はい、いつでも解約可能です。</p></div>
+          <div class="faq-answer"><p>はい、いつでも解約可能です。解約後は現在の請求期間の終了までPro機能をお使いいただけます。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">支払い方法は何が使えますか？</summary>
+          <div class="faq-answer"><p>クレジットカード（Visa、Mastercard、JCB、American Express）に対応しています。Stripeを通じた安全な決済です。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Proプランから無料プランに戻せますか？</summary>
+          <div class="faq-answer"><p>はい。解約するとFreeプランに戻ります。作成済みのプロジェクトやデータは削除されず、最新3件のプロジェクトが引き続き利用可能です。再度Proにアップグレードすれば全プロジェクトが復活します。</p></div>
         </details>
       </div>
     </div>
@@ -93,11 +110,23 @@
       <div class="faq-list fade-in">
         <details class="faq-item">
           <summary class="faq-question">共有相手もログインが必要ですか？</summary>
-          <div class="faq-answer"><p>いいえ。共有リンクを開くだけで閲覧できます。ログインは不要です。</p></div>
+          <div class="faq-answer"><p>いいえ。共有リンクを開くだけで閲覧できます。ログインやインストールは不要です。</p></div>
         </details>
         <details class="faq-item">
           <summary class="faq-question">共有を停止できますか？</summary>
           <div class="faq-answer"><p>はい。エディター画面から共有停止ボタンで、いつでもリンクを無効化できます。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">共有リンクはどこから発行できますか？</summary>
+          <div class="faq-answer"><p>エディター画面の右上にある「共有リンクを作成」ボタンから発行できます。共有機能はProプランで利用可能です。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">共有相手は修正内容を編集できますか？</summary>
+          <div class="faq-answer"><p>共有相手は注釈の閲覧と「作業完了」チェックが可能です。注釈の追加や削除はプロジェクトの作成者のみが行えます。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">共有リンクに有効期限はありますか？</summary>
+          <div class="faq-answer"><p>有効期限はありません。共有を停止するまでリンクは有効です。不要になったらいつでも停止できます。</p></div>
         </details>
       </div>
     </div>
@@ -118,6 +147,18 @@
         <details class="faq-item">
           <summary class="faq-question">セキュリティは大丈夫ですか？</summary>
           <div class="faq-answer"><p>通信はすべてHTTPS暗号化、認証はFirebase Auth（Google認証）を使用しています。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Chrome拡張をアンインストールしたらデータは消えますか？</summary>
+          <div class="faq-answer"><p>ログイン済みの場合、データはクラウドに保存されているため消えません。再インストール後にログインすれば復元されます。ログインしていない場合はブラウザ内のデータが削除されます。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">別のPCからも同じデータにアクセスできますか？</summary>
+          <div class="faq-answer"><p>はい。同じGoogleアカウントでログインすれば、別のPCでもクラウドに保存されたプロジェクトを利用できます。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">スクリーンショットの画質は？</summary>
+          <div class="faq-answer"><p>表示中のページをそのままの解像度でキャプチャします。JPEG形式で保存されるため、元のページと同等の画質で確認できます。</p></div>
         </details>
       </div>
     </div>
@@ -158,7 +199,7 @@
         <div class="footer-column">
           <h4>会社情報</h4>
           <ul>
-            <li><a href="./company.html">運営会社</a></li>
+            <li><a href="./company.html">運営者</a></li>
             <li><a href="./terms.html">利用規約</a></li>
             <li><a href="./privacy.html">プライバシーポリシー</a></li>
             <li><a href="./tokushoho.html">特定商取引法に基づく表記</a></li>
@@ -166,7 +207,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; FixShot</span>
+        <span>&copy; 2026 FixShot</span>
       </div>
     </div>
   </footer>

@@ -106,15 +106,15 @@
     mBtn.addEventListener('click', () => {
       mBtn.classList.add('is-active');
       aBtn.classList.remove('is-active');
-      amount.textContent = '990';
-      period.innerHTML = ' /月<span class="pricing-tax">（税込）</span>';
+      amount.textContent = '9.9';
+      period.innerHTML = ' /mo';
       if (proBtn) proBtn.href = proBtn.dataset.monthlyUrl || '#';
     });
     aBtn.addEventListener('click', () => {
       aBtn.classList.add('is-active');
       mBtn.classList.remove('is-active');
-      amount.textContent = '9,900';
-      period.innerHTML = ' /年<span class="pricing-tax">（税込）</span>';
+      amount.textContent = '99';
+      period.innerHTML = ' /yr';
       if (proBtn) proBtn.href = proBtn.dataset.yearlyUrl || '#';
     });
   });

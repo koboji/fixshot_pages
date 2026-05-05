@@ -5,12 +5,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>機能紹介 | FixShot</title>
-  <meta name="description" content="FixShotの機能紹介。ワンクリックキャプチャ、注釈、共有、フォルダ管理、進捗管理、クラウド同期。">
+  <title data-i18n="metaFeaturesTitle">機能紹介 | FixShot</title>
+  <meta name="description" content="FixShotの機能紹介。ワンクリックキャプチャ、注釈、共有、フォルダ管理、進捗管理、クラウド同期。" data-i18n-attr="content:metaFeaturesDescription">
+  <link rel="alternate" hreflang="en" href="https://fixshot.jp/features.html?lang=en">
+  <link rel="alternate" hreflang="ja" href="https://fixshot.jp/features.html?lang=ja">
+  <link rel="alternate" hreflang="x-default" href="https://fixshot.jp/features.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/styles.css">
+  <script src="./assets/js/i18n.js" defer></script>
 </head>
 <body>
 
@@ -19,14 +23,18 @@
     <div class="container">
       <a href="./" class="header-logo"><img src="./assets/images/fixshot-logo.png" alt="FixShot" class="header-logo-img"></a>
       <nav class="header-nav">
-        <a href="./features.html" class="active">機能</a>
-        <a href="./pricing.html">料金</a>
-        <a href="./guide.html">使い方</a>
-        <a href="./faq.html">FAQ</a>
+        <a href="./features.html" class="active" data-i18n="navFeatures">機能</a>
+        <a href="./pricing.html" data-i18n="navPricing">料金</a>
+        <a href="./guide.html" data-i18n="navGuide">使い方</a>
+        <a href="./faq.html" data-i18n="navFaq">FAQ</a>
       </nav>
       <div class="header-actions">
-        <a href="#" class="btn btn--primary"><i class="ri-chrome-fill"></i> Chromeに追加</a>
-        <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-lang="en" data-i18n-attr="aria-label:ariaToggleEn">EN</button>
+          <button type="button" data-lang="ja" data-i18n-attr="aria-label:ariaToggleJa">JA</button>
+        </div>
+        <a href="#" class="btn btn--primary"><i class="ri-chrome-fill"></i> <span data-i18n="ctaAddToChrome">Chromeに追加</span></a>
+        <button class="hamburger" data-i18n-attr="aria-label:ariaMenu" aria-label="メニュー"><span></span><span></span><span></span></button>
       </div>
     </div>
   </header>
@@ -34,9 +42,9 @@
   <!-- ===== Page Hero ===== -->
   <section class="page-hero">
     <div class="container fade-in">
-      <span class="section-eyebrow">Features</span>
-      <h1 class="page-hero-title">機能紹介</h1>
-      <p class="page-hero-subtitle">FixShotでできること</p>
+      <span class="section-eyebrow" data-i18n="featuresHeroEyebrow">Features</span>
+      <h1 class="page-hero-title" data-i18n="featuresHeroTitle">機能紹介</h1>
+      <p class="page-hero-subtitle" data-i18n="featuresHeroSubtitle">FixShotでできること</p>
     </div>
   </section>
 
@@ -44,39 +52,39 @@
   <section class="section">
     <div class="container">
       <div class="section-header fade-in">
-        <h2 class="section-title">FixShot の主な機能</h2>
-        <p class="section-subtitle">修正依頼に必要なすべてが、ひとつのツールに。</p>
+        <h2 class="section-title" data-i18n="featuresOverviewTitle">FixShot の主な機能</h2>
+        <p class="section-subtitle" data-i18n="featuresOverviewSubtitle">修正依頼に必要なすべてが、ひとつのツールに。</p>
       </div>
       <div class="card-grid card-grid--3 stagger">
         <div class="card fade-in">
           <div class="card-icon"><i class="ri-screenshot-2-line"></i></div>
-          <h3 class="card-title">ワンクリックキャプチャ</h3>
-          <p class="card-text">Chrome拡張のボタンひとつで、表示中のページをそのままキャプチャ。スクショを撮って貼り付ける手間がなくなります。PNGやJPEGの画像ファイルを直接アップロードすることも可能です。</p>
+          <h3 class="card-title" data-i18n="featuresFeat1Title">ワンクリックキャプチャ</h3>
+          <p class="card-text" data-i18n="featuresFeat1Text">Chrome拡張のボタンひとつで、表示中のページをそのままキャプチャ。スクショを撮って貼り付ける手間がなくなります。PNGやJPEGの画像ファイルを直接アップロードすることも可能です。</p>
         </div>
         <div class="card fade-in">
           <div class="card-icon"><i class="ri-edit-box-line"></i></div>
-          <h3 class="card-title">直感的な注釈</h3>
-          <p class="card-text">修正したい箇所をドラッグで矩形選択し、コメントを追加。「どこを」「どう直すか」が視覚的に伝わるので、テキストだけの指示で起きる認識のズレを防ぎます。</p>
+          <h3 class="card-title" data-i18n="featuresFeat2Title">直感的な注釈</h3>
+          <p class="card-text" data-i18n="featuresFeat2Text">修正したい箇所をドラッグで矩形選択し、コメントを追加。「どこを」「どう直すか」が視覚的に伝わるので、テキストだけの指示で起きる認識のズレを防ぎます。</p>
         </div>
         <div class="card fade-in">
           <div class="card-icon"><i class="ri-share-line"></i></div>
-          <h3 class="card-title">ワンクリック共有</h3>
-          <p class="card-text">プロジェクトから共有リンクを発行して、相手に送るだけ。受け取った相手はログイン不要、ブラウザだけで修正内容を確認できます。共有の停止もいつでも可能です。</p>
+          <h3 class="card-title" data-i18n="featuresFeat3Title">ワンクリック共有</h3>
+          <p class="card-text" data-i18n="featuresFeat3Text">プロジェクトから共有リンクを発行して、相手に送るだけ。受け取った相手はログイン不要、ブラウザだけで修正内容を確認できます。共有の停止もいつでも可能です。</p>
         </div>
         <div class="card fade-in">
           <div class="card-icon"><i class="ri-folder-3-line"></i></div>
-          <h3 class="card-title">フォルダで案件管理</h3>
-          <p class="card-text">クライアントやプロジェクトごとにフォルダを作成して、プロジェクトを整理。複数案件を並行して進めるディレクターやマーケターにも対応します。</p>
+          <h3 class="card-title" data-i18n="featuresFeat4Title">フォルダで案件管理</h3>
+          <p class="card-text" data-i18n="featuresFeat4Text">クライアントやプロジェクトごとにフォルダを作成して、プロジェクトを整理。複数案件を並行して進めるディレクターやマーケターにも対応します。</p>
         </div>
         <div class="card fade-in">
           <div class="card-icon"><i class="ri-checkbox-circle-line"></i></div>
-          <h3 class="card-title">進捗管理</h3>
-          <p class="card-text">各注釈に「作業完了」「確認完了」のチェックを付けられます。未対応の修正がひと目でわかるので、対応漏れを防ぎ、レビューの完了を明確にできます。</p>
+          <h3 class="card-title" data-i18n="featuresFeat5Title">進捗管理</h3>
+          <p class="card-text" data-i18n="featuresFeat5Text">各注釈に「作業完了」「確認完了」のチェックを付けられます。未対応の修正がひと目でわかるので、対応漏れを防ぎ、レビューの完了を明確にできます。</p>
         </div>
         <div class="card fade-in">
           <div class="card-icon"><i class="ri-cloud-line"></i></div>
-          <h3 class="card-title">クラウド同期</h3>
-          <p class="card-text">Googleアカウントでログインすれば、レビューデータがクラウドに同期。別のPCや端末からでも同じプロジェクトにアクセスできます。ローカルデータは自動的にクラウドへ移行されます。</p>
+          <h3 class="card-title" data-i18n="featuresFeat6Title">クラウド同期</h3>
+          <p class="card-text" data-i18n="featuresFeat6Text">Googleアカウントでログインすれば、レビューデータがクラウドに同期。別のPCや端末からでも同じプロジェクトにアクセスできます。ローカルデータは自動的にクラウドへ移行されます。</p>
         </div>
       </div>
     </div>
@@ -86,18 +94,18 @@
   <section class="section section--alt">
     <div class="container">
       <div class="section-header fade-in">
-        <h2 class="section-title">各機能をもっと詳しく</h2>
+        <h2 class="section-title" data-i18n="featuresShowcaseTitle">各機能をもっと詳しく</h2>
       </div>
       <div class="feature-showcase">
         <div class="feature-row fade-in">
           <div class="feature-row-content">
-            <h2 class="feature-row-title">ワンクリックでページをキャプチャ</h2>
-            <p class="feature-row-text">Chrome拡張のボタンひとつで、表示中のページを丸ごとスクリーンショット。<br>面倒なスクショ撮影→貼り付けの手間がゼロになります。</p>
+            <h2 class="feature-row-title" data-i18n="featuresRow1Title">ワンクリックでページをキャプチャ</h2>
+            <p class="feature-row-text" data-i18n="featuresRow1TextHtml" data-i18n-html="1">Chrome拡張のボタンひとつで、表示中のページを丸ごとスクリーンショット。<br>面倒なスクショ撮影→貼り付けの手間がゼロになります。</p>
             <ul class="feature-row-list">
-              <li><i class="ri-check-line"></i> ブラウザから1クリックで保存</li>
-              <li><i class="ri-check-line"></i> ページ全体を正確にキャプチャ</li>
-              <li><i class="ri-check-line"></i> PNG / JPEG 画像のアップロードにも対応</li>
-              <li><i class="ri-check-line"></i> 複数ページをひとつのリストにまとめて管理</li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow1Item1">ブラウザから1クリックで保存</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow1Item2">ページ全体を正確にキャプチャ</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow1Item3">PNG / JPEG 画像のアップロードにも対応</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow1Item4">複数ページをひとつのリストにまとめて管理</span></li>
             </ul>
           </div>
           <div class="feature-row-image">
@@ -107,13 +115,13 @@
 
         <div class="feature-row fade-in">
           <div class="feature-row-content">
-            <h2 class="feature-row-title">囲って、コメント。直感的な注釈</h2>
-            <p class="feature-row-text">修正したい箇所を矩形で囲んでコメントを追加。<br>スクリーンショットの上に直接書き込むので、テキストだけでは伝わらない修正意図を正確に伝えられます。</p>
+            <h2 class="feature-row-title" data-i18n="featuresRow2Title">囲って、コメント。直感的な注釈</h2>
+            <p class="feature-row-text" data-i18n="featuresRow2TextHtml" data-i18n-html="1">修正したい箇所を矩形で囲んでコメントを追加。<br>スクリーンショットの上に直接書き込むので、テキストだけでは伝わらない修正意図を正確に伝えられます。</p>
             <ul class="feature-row-list">
-              <li><i class="ri-check-line"></i> ドラッグで修正範囲を指定</li>
-              <li><i class="ri-check-line"></i> コメントを自由に記入・編集</li>
-              <li><i class="ri-check-line"></i> 注釈の並び替え・削除もかんたん</li>
-              <li><i class="ri-check-line"></i> 作業完了・確認完了のステータス管理</li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow2Item1">ドラッグで修正範囲を指定</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow2Item2">コメントを自由に記入・編集</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow2Item3">注釈の並び替え・削除もかんたん</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow2Item4">作業完了・確認完了のステータス管理</span></li>
             </ul>
           </div>
           <div class="feature-row-image">
@@ -123,13 +131,13 @@
 
         <div class="feature-row fade-in">
           <div class="feature-row-content">
-            <h2 class="feature-row-title">リンクひとつで共有・確認 <span class="pro-label">Pro</span></h2>
-            <p class="feature-row-text">作成したプロジェクトは共有リンクで即座に送信。<br>受け取った相手はログインもインストールも不要で、ブラウザから修正内容を確認できます。</p>
+            <h2 class="feature-row-title" data-i18n="featuresRow3TitleHtml" data-i18n-html="1">リンクひとつで共有・確認 <span class="pro-label">Pro</span></h2>
+            <p class="feature-row-text" data-i18n="featuresRow3TextHtml" data-i18n-html="1">作成したプロジェクトは共有リンクで即座に送信。<br>受け取った相手はログインもインストールも不要で、ブラウザから修正内容を確認できます。</p>
             <ul class="feature-row-list">
-              <li><i class="ri-check-line"></i> 共有リンクをワンクリック生成</li>
-              <li><i class="ri-check-line"></i> 相手はログイン不要で閲覧</li>
-              <li><i class="ri-check-line"></i> 共有先で作業完了のチェックが可能</li>
-              <li><i class="ri-check-line"></i> 共有停止でリンクを即無効化</li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow3Item1">共有リンクをワンクリック生成</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow3Item2">相手はログイン不要で閲覧</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow3Item3">共有先で作業完了のチェックが可能</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow3Item4">共有停止でリンクを即無効化</span></li>
             </ul>
           </div>
           <div class="feature-row-image">
@@ -139,12 +147,12 @@
 
         <div class="feature-row fade-in">
           <div class="feature-row-content">
-            <h2 class="feature-row-title">フォルダで案件を整理</h2>
-            <p class="feature-row-text">クライアントやプロジェクト単位でフォルダを作成し、プロジェクトを分類。複数案件を並行で進めても、必要なリストにすぐたどり着けます。</p>
+            <h2 class="feature-row-title" data-i18n="featuresRow4Title">フォルダで案件を整理</h2>
+            <p class="feature-row-text" data-i18n="featuresRow4Text">クライアントやプロジェクト単位でフォルダを作成し、プロジェクトを分類。複数案件を並行で進めても、必要なリストにすぐたどり着けます。</p>
             <ul class="feature-row-list">
-              <li><i class="ri-check-line"></i> フォルダの作成・削除・名前変更</li>
-              <li><i class="ri-check-line"></i> リストをフォルダ間で移動</li>
-              <li><i class="ri-check-line"></i> Finder風のわかりやすいUI</li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow4Item1">フォルダの作成・削除・名前変更</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow4Item2">リストをフォルダ間で移動</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow4Item3">Finder風のわかりやすいUI</span></li>
             </ul>
           </div>
           <div class="feature-row-image">
@@ -154,12 +162,12 @@
 
         <div class="feature-row fade-in">
           <div class="feature-row-content">
-            <h2 class="feature-row-title">進捗を見える化して、対応漏れゼロに</h2>
-            <p class="feature-row-text">各注釈に「作業完了」「確認完了」のステータスを設定。リスト全体の進捗がひと目で把握でき、レビューの完了タイミングを明確にできます。</p>
+            <h2 class="feature-row-title" data-i18n="featuresRow5Title">進捗を見える化して、対応漏れゼロに</h2>
+            <p class="feature-row-text" data-i18n="featuresRow5Text">各注釈に「作業完了」「確認完了」のステータスを設定。リスト全体の進捗がひと目で把握でき、レビューの完了タイミングを明確にできます。</p>
             <ul class="feature-row-list">
-              <li><i class="ri-check-line"></i> 未対応 / 作業完了 / 確認完了の3ステータス</li>
-              <li><i class="ri-check-line"></i> フィルター機能で未対応だけを表示</li>
-              <li><i class="ri-check-line"></i> 共有先からも作業完了をチェック可能</li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow5Item1">未対応 / 作業完了 / 確認完了の3ステータス</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow5Item2">フィルター機能で未対応だけを表示</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="featuresRow5Item3">共有先からも作業完了をチェック可能</span></li>
             </ul>
           </div>
           <div class="feature-row-image">
@@ -173,9 +181,9 @@
   <!-- ===== CTA ===== -->
   <section class="cta-section">
     <div class="container fade-in">
-      <h2 class="cta-title">修正依頼をもっとスムーズに</h2>
-      <p class="cta-text">FixShot で、伝わる修正依頼を始めましょう。</p>
-      <a href="#" class="btn btn--white btn--lg"><i class="ri-chrome-fill"></i> Chromeに追加 &mdash; 無料</a>
+      <h2 class="cta-title" data-i18n="indexCtaTitle">修正依頼をもっとスムーズに</h2>
+      <p class="cta-text" data-i18n="indexCtaText">FixShot で、伝わる修正依頼を始めましょう。</p>
+      <a href="#" class="btn btn--white btn--lg"><i class="ri-chrome-fill"></i> <span data-i18n="ctaAddToChromeFree">Chromeに追加 &mdash; 無料</span></a>
     </div>
   </section>
 
@@ -185,30 +193,30 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand"><img src="./assets/images/logomark_fixshot.png" alt="FixShot" class="footer-logo-img"> FixShot</div>
-          <p class="footer-about">Webページのスクリーンショットに注釈を付けて共有できる、<br>修正依頼・レビュー管理ツール。</p>
+          <p class="footer-about" data-i18n="footerAbout" data-i18n-html="1">Webページのスクリーンショットに注釈を付けて共有できる、<br>修正依頼・レビュー管理ツール。</p>
         </div>
         <div class="footer-column">
-          <h4>製品</h4>
+          <h4 data-i18n="footerProductHeading">製品</h4>
           <ul>
-            <li><a href="./features.html">機能</a></li>
-            <li><a href="./pricing.html">料金プラン</a></li>
+            <li><a href="./features.html" data-i18n="navFeatures">機能</a></li>
+            <li><a href="./pricing.html" data-i18n="footerPricingPlans">料金プラン</a></li>
           </ul>
         </div>
         <div class="footer-column">
-          <h4>サポート</h4>
+          <h4 data-i18n="footerSupportHeading">サポート</h4>
           <ul>
-            <li><a href="./guide.html">使い方</a></li>
-            <li><a href="./faq.html">FAQ</a></li>
-            <li><a href="./contact.html">お問い合わせ</a></li>
+            <li><a href="./guide.html" data-i18n="navGuide">使い方</a></li>
+            <li><a href="./faq.html" data-i18n="navFaq">FAQ</a></li>
+            <li><a href="./contact.html" data-i18n="navContact">お問い合わせ</a></li>
           </ul>
         </div>
         <div class="footer-column">
-          <h4>会社情報</h4>
+          <h4 data-i18n="footerCompanyHeading">会社情報</h4>
           <ul>
-            <li><a href="./company.html">運営者</a></li>
-            <li><a href="./terms.html">利用規約</a></li>
-            <li><a href="./privacy.html">プライバシーポリシー</a></li>
-            <li><a href="./tokushoho.html">特定商取引法に基づく表記</a></li>
+            <li><a href="./company.html" data-i18n="navAbout">運営者</a></li>
+            <li><a href="./terms.html" data-i18n="navTerms">利用規約</a></li>
+            <li><a href="./privacy.html" data-i18n="navPrivacy">プライバシーポリシー</a></li>
+            <li><a href="./tokushoho.html" data-i18n="navTokushoho">特定商取引法に基づく表記</a></li>
           </ul>
         </div>
       </div>

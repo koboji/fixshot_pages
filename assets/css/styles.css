@@ -253,6 +253,39 @@ h1, h2, h3, h4, h5, h6 {
   gap: 12px;
 }
 
+/* Language toggle */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.lang-toggle button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: var(--text-dark, #2d2d2d);
+  cursor: pointer;
+  padding: 6px 10px;
+  line-height: 1;
+  transition: background var(--transition, 0.18s) ease, color var(--transition, 0.18s) ease;
+}
+.lang-toggle button + button {
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+.lang-toggle button.is-active {
+  background: var(--primary, #ff2599);
+  color: #fff;
+}
+.lang-toggle button:hover:not(.is-active) {
+  background: rgba(0, 0, 0, 0.04);
+}
+
 /* Hamburger */
 .hamburger {
   display: none;

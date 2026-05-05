@@ -5,8 +5,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FixShot | スクショで伝わる修正依頼ツール</title>
-  <meta name="description" content="FixShot は、Webページをスクリーンショットして、気になる箇所を囲ってコメント付きで共有できる修正依頼ツールです。">
+  <title data-i18n="metaIndexTitle">FixShot | スクショで伝わる修正依頼ツール</title>
+  <meta name="description" content="FixShot は、Webページをスクリーンショットして、気になる箇所を囲ってコメント付きで共有できる修正依頼ツールです。" data-i18n-attr="content:metaIndexDescription">
+  <link rel="alternate" hreflang="en" href="https://fixshot.jp/?lang=en">
+  <link rel="alternate" hreflang="ja" href="https://fixshot.jp/?lang=ja">
+  <link rel="alternate" hreflang="x-default" href="https://fixshot.jp/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
@@ -14,6 +17,7 @@
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J9CPB6DFHJ"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-J9CPB6DFHJ');</script>
+  <script src="./assets/js/i18n.js" defer></script>
 </head>
 <body>
 
@@ -22,14 +26,18 @@
     <div class="container">
       <a href="./" class="header-logo"><img src="./assets/images/fixshot-logo.png" alt="FixShot" class="header-logo-img"></a>
       <nav class="header-nav">
-        <a href="./features.html">機能</a>
-        <a href="./pricing.html">料金</a>
-        <a href="./guide.html">使い方</a>
-        <a href="./faq.html">FAQ</a>
+        <a href="./features.html" data-i18n="navFeatures">機能</a>
+        <a href="./pricing.html" data-i18n="navPricing">料金</a>
+        <a href="./guide.html" data-i18n="navGuide">使い方</a>
+        <a href="./faq.html" data-i18n="navFaq">FAQ</a>
       </nav>
       <div class="header-actions">
-        <a href="#" class="btn btn--primary"><i class="ri-chrome-fill"></i> Chromeに追加</a>
-        <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-lang="en" data-i18n-attr="aria-label:ariaToggleEn">EN</button>
+          <button type="button" data-lang="ja" data-i18n-attr="aria-label:ariaToggleJa">JA</button>
+        </div>
+        <a href="#" class="btn btn--primary"><i class="ri-chrome-fill"></i> <span data-i18n="ctaAddToChrome">Chromeに追加</span></a>
+        <button class="hamburger" data-i18n-attr="aria-label:ariaMenu" aria-label="メニュー"><span></span><span></span><span></span></button>
       </div>
     </div>
   </header>
@@ -38,17 +46,17 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content fade-in">
-        <h1 class="hero-title">スクショで<span class="accent">伝わる。</span><br>修正依頼が<span class="accent">変わる。</span></h1>
-        <p class="hero-lead">Webページをそのままキャプチャして、気になる場所を囲ってコメントを付け、ワンクリックで共有。制作・マーケ・ディレクションのやり取りを、わかりやすく、速く、迷いなく。</p>
+        <h1 class="hero-title" data-i18n="indexHeroTitleHtml" data-i18n-html="1">スクショで<span class="accent">伝わる。</span><br>修正依頼が<span class="accent">変わる。</span></h1>
+        <p class="hero-lead" data-i18n="indexHeroLead">Webページをそのままキャプチャして、気になる場所を囲ってコメントを付け、ワンクリックで共有。制作・マーケ・ディレクションのやり取りを、わかりやすく、速く、迷いなく。</p>
         <div class="hero-buttons">
-          <a href="#" class="btn btn--primary btn--lg"><i class="ri-chrome-fill"></i> Chromeに追加 &mdash; 無料</a>
-          <a href="./guide.html" class="btn btn--outline btn--lg">使い方を見る</a>
+          <a href="#" class="btn btn--primary btn--lg"><i class="ri-chrome-fill"></i> <span data-i18n="ctaAddToChromeFree">Chromeに追加 — 無料</span></a>
+          <a href="./guide.html" class="btn btn--outline btn--lg" data-i18n="indexHeroSeeGuide">使い方を見る</a>
         </div>
       </div>
       <div class="hero-image scale-in">
         <div class="hero-composite">
-          <img src="./assets/images/ss-dashboard.png" alt="FixShot ダッシュボード画面" class="hero-screenshot">
-          <img src="./assets/images/ss-popup.png" alt="FixShot ポップアップ" class="hero-popup">
+          <img src="./assets/images/ss-dashboard.png" alt="FixShot dashboard" class="hero-screenshot">
+          <img src="./assets/images/ss-popup.png" alt="FixShot popup" class="hero-popup">
         </div>
       </div>
     </div>
@@ -58,25 +66,25 @@
   <section class="section">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-eyebrow">Problem</span>
-        <h2 class="section-title">こんな悩みはありませんか？</h2>
-        <p class="section-subtitle">修正依頼のやり取りで、こんなストレスを感じていませんか？</p>
+        <span class="section-eyebrow" data-i18n="indexProblemEyebrow">Problem</span>
+        <h2 class="section-title" data-i18n="indexProblemTitle">こんな悩みはありませんか？</h2>
+        <p class="section-subtitle" data-i18n="indexProblemSubtitle">修正依頼のやり取りで、こんなストレスを感じていませんか？</p>
       </div>
       <div class="card-grid card-grid--3 stagger">
         <div class="card fade-in">
           <div class="card-icon"><i class="ri-time-line"></i></div>
-          <h3 class="card-title">指示に時間がかかる</h3>
-          <p class="card-text">「上から3番目の画像の左側の余白が…」テキストだけでは伝わらず、何度もやりとりが発生してしまう。</p>
+          <h3 class="card-title" data-i18n="indexProblem1Title">指示に時間がかかる</h3>
+          <p class="card-text" data-i18n="indexProblem1Text">「上から3番目の画像の左側の余白が…」テキストだけでは伝わらず、何度もやりとりが発生してしまう。</p>
         </div>
         <div class="card fade-in">
           <div class="card-icon"><i class="ri-chat-1-line"></i></div>
-          <h3 class="card-title">認識がずれる</h3>
-          <p class="card-text">チャットで伝えた修正箇所が正しく伝わらず、意図と違う修正が返ってきた経験はありませんか？</p>
+          <h3 class="card-title" data-i18n="indexProblem2Title">認識がずれる</h3>
+          <p class="card-text" data-i18n="indexProblem2Text">チャットで伝えた修正箇所が正しく伝わらず、意図と違う修正が返ってきた経験はありませんか？</p>
         </div>
         <div class="card fade-in">
           <div class="card-icon"><i class="ri-team-line"></i></div>
-          <h3 class="card-title">管理がバラバラ</h3>
-          <p class="card-text">スクショはSlack、指示はメール、確認はスプレッドシート。修正依頼が分散して全体像が見えない。</p>
+          <h3 class="card-title" data-i18n="indexProblem3Title">管理がバラバラ</h3>
+          <p class="card-text" data-i18n="indexProblem3Text">スクショはSlack、指示はメール、確認はスプレッドシート。修正依頼が分散して全体像が見えない。</p>
         </div>
       </div>
     </div>
@@ -86,53 +94,53 @@
   <section class="section section--alt">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-eyebrow">Features</span>
-        <h2 class="section-title">FixShot なら、ここまでカンタン</h2>
-        <p class="section-subtitle">スクリーンショット × 注釈 × 共有で、修正依頼のやりとりが劇的に変わります。</p>
+        <span class="section-eyebrow" data-i18n="indexFeaturesEyebrow">Features</span>
+        <h2 class="section-title" data-i18n="indexFeaturesTitle">FixShot なら、ここまでカンタン</h2>
+        <p class="section-subtitle" data-i18n="indexFeaturesSubtitle">スクリーンショット × 注釈 × 共有で、修正依頼のやりとりが劇的に変わります。</p>
       </div>
       <div class="feature-showcase">
         <div class="feature-row fade-in">
           <div class="feature-row-content">
-            <h2 class="feature-row-title">ワンクリックでページをキャプチャ</h2>
-            <p class="feature-row-text">Chrome拡張のボタンひとつで、表示中のページを丸ごとスクリーンショット。<br>面倒なスクショ撮影→貼り付けの手間がゼロに。</p>
+            <h2 class="feature-row-title" data-i18n="indexFeat1Title">ワンクリックでページをキャプチャ</h2>
+            <p class="feature-row-text" data-i18n="indexFeat1TextHtml" data-i18n-html="1">Chrome拡張のボタンひとつで、表示中のページを丸ごとスクリーンショット。<br>面倒なスクショ撮影→貼り付けの手間がゼロに。</p>
             <ul class="feature-row-list">
-              <li><i class="ri-check-line"></i> ブラウザから1クリックで保存</li>
-              <li><i class="ri-check-line"></i> ページ全体を正確にキャプチャ</li>
-              <li><i class="ri-check-line"></i> 画像ファイルのアップロードにも対応</li>
+              <li><i class="ri-check-line"></i> <span data-i18n="indexFeat1Item1">ブラウザから1クリックで保存</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="indexFeat1Item2">ページ全体を正確にキャプチャ</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="indexFeat1Item3">画像ファイルのアップロードにも対応</span></li>
             </ul>
           </div>
           <div class="feature-row-image">
-            <img src="./assets/images/ss-popup.png" alt="FixShot キャプチャ機能" class="feature-screenshot feature-screenshot--small">
+            <img src="./assets/images/ss-popup.png" alt="FixShot capture" class="feature-screenshot feature-screenshot--small">
           </div>
         </div>
 
         <div class="feature-row fade-in">
           <div class="feature-row-content">
-            <h2 class="feature-row-title">囲って、コメント。直感的な注釈</h2>
-            <p class="feature-row-text">修正したい箇所を矩形で囲んでコメントを追加。<br>視覚的に「どこを」「どう直すか」が一目でわかります。</p>
+            <h2 class="feature-row-title" data-i18n="indexFeat2Title">囲って、コメント。直感的な注釈</h2>
+            <p class="feature-row-text" data-i18n="indexFeat2TextHtml" data-i18n-html="1">修正したい箇所を矩形で囲んでコメントを追加。<br>視覚的に「どこを」「どう直すか」が一目でわかります。</p>
             <ul class="feature-row-list">
-              <li><i class="ri-check-line"></i> ドラッグで範囲を指定</li>
-              <li><i class="ri-check-line"></i> コメントを自由に記入</li>
-              <li><i class="ri-check-line"></i> 作業完了・確認完了をチェック</li>
+              <li><i class="ri-check-line"></i> <span data-i18n="indexFeat2Item1">ドラッグで範囲を指定</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="indexFeat2Item2">コメントを自由に記入</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="indexFeat2Item3">作業完了・確認完了をチェック</span></li>
             </ul>
           </div>
           <div class="feature-row-image">
-            <img src="./assets/images/ss-editor-annotated.jpg" alt="FixShot 注釈機能" class="feature-screenshot">
+            <img src="./assets/images/ss-editor-annotated.jpg" alt="FixShot annotation" class="feature-screenshot">
           </div>
         </div>
 
         <div class="feature-row fade-in">
           <div class="feature-row-content">
-            <h2 class="feature-row-title">リンクひとつで共有・確認 <span class="pro-label">Pro</span></h2>
-            <p class="feature-row-text">作成したプロジェクトは共有リンクで即座に送信。<br>相手はログイン不要でブラウザから確認できます。</p>
+            <h2 class="feature-row-title" data-i18n="indexFeat3TitleHtml" data-i18n-html="1">リンクひとつで共有・確認 <span class="pro-label">Pro</span></h2>
+            <p class="feature-row-text" data-i18n="indexFeat3TextHtml" data-i18n-html="1">作成したプロジェクトは共有リンクで即座に送信。<br>相手はログイン不要でブラウザから確認できます。</p>
             <ul class="feature-row-list">
-              <li><i class="ri-check-line"></i> 共有リンクをワンクリック生成</li>
-              <li><i class="ri-check-line"></i> 相手はログイン不要で閲覧</li>
-              <li><i class="ri-check-line"></i> 共有停止もかんたん</li>
+              <li><i class="ri-check-line"></i> <span data-i18n="indexFeat3Item1">共有リンクをワンクリック生成</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="indexFeat3Item2">相手はログイン不要で閲覧</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="indexFeat3Item3">共有停止もかんたん</span></li>
             </ul>
           </div>
           <div class="feature-row-image">
-            <img src="./assets/images/ss-library-share.png" alt="FixShot 共有機能" class="feature-screenshot">
+            <img src="./assets/images/ss-library-share.png" alt="FixShot share" class="feature-screenshot">
           </div>
         </div>
       </div>
@@ -143,25 +151,25 @@
   <section class="section">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-eyebrow">How it Works</span>
-        <h2 class="section-title">3ステップで始められます</h2>
-        <p class="section-subtitle">インストールからレビュー共有まで、わずか数分で完了します。</p>
+        <span class="section-eyebrow" data-i18n="indexHowEyebrow">How it Works</span>
+        <h2 class="section-title" data-i18n="indexHowTitle">3ステップで始められます</h2>
+        <p class="section-subtitle" data-i18n="indexHowSubtitle">インストールからレビュー共有まで、わずか数分で完了します。</p>
       </div>
       <div class="steps-grid stagger">
         <div class="step-card fade-in">
           <div class="step-number">1</div>
-          <h3 class="step-title">Chrome拡張を追加</h3>
-          <p class="step-text">Chrome ウェブストアからFixShotを追加。インストールは数秒で完了します。</p>
+          <h3 class="step-title" data-i18n="indexHow1Title">Chrome拡張を追加</h3>
+          <p class="step-text" data-i18n="indexHow1Text">Chrome ウェブストアからFixShotを追加。インストールは数秒で完了します。</p>
         </div>
         <div class="step-card fade-in">
           <div class="step-number">2</div>
-          <h3 class="step-title">ページをキャプチャ&amp;注釈</h3>
-          <p class="step-text">確認したいページを開いてキャプチャ。気になる箇所を囲んでコメントを残します。</p>
+          <h3 class="step-title" data-i18n="indexHow2Title">ページをキャプチャ&amp;注釈</h3>
+          <p class="step-text" data-i18n="indexHow2Text">確認したいページを開いてキャプチャ。気になる箇所を囲んでコメントを残します。</p>
         </div>
         <div class="step-card fade-in">
           <div class="step-number">3</div>
-          <h3 class="step-title">リンクで共有</h3>
-          <p class="step-text">共有リンクを発行して相手に送るだけ。相手はログイン不要でブラウザから確認できます。</p>
+          <h3 class="step-title" data-i18n="indexHow3Title">リンクで共有</h3>
+          <p class="step-text" data-i18n="indexHow3Text">共有リンクを発行して相手に送るだけ。相手はログイン不要でブラウザから確認できます。</p>
         </div>
       </div>
     </div>
@@ -171,70 +179,70 @@
   <section class="section section--alt">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-eyebrow">Pricing</span>
-        <h2 class="section-title">おひとり様でも、チームでも</h2>
-        <p class="section-subtitle">個人でもチームでも、あなたに合ったプランを選べます。</p>
+        <span class="section-eyebrow" data-i18n="indexPricingEyebrow">Pricing</span>
+        <h2 class="section-title" data-i18n="indexPricingTitle">おひとり様でも、チームでも</h2>
+        <p class="section-subtitle" data-i18n="indexPricingSubtitle">個人でもチームでも、あなたに合ったプランを選べます。</p>
       </div>
       <div class="pricing-grid pricing-grid--3col fade-in">
         <div class="pricing-toggle-above">
-          <button id="billingMonthly" class="pricing-toggle-btn is-active" type="button">月額</button>
-          <button id="billingAnnual" class="pricing-toggle-btn" type="button">年額 <span class="pricing-toggle-save">2ヶ月分お得</span></button>
+          <button id="billingMonthly" class="pricing-toggle-btn is-active" type="button" data-i18n="pricingMonthly">月額</button>
+          <button id="billingAnnual" class="pricing-toggle-btn" type="button"><span data-i18n="pricingYearly">年額</span> <span class="pricing-toggle-save" data-i18n="pricingYearlySave">2ヶ月分お得</span></button>
         </div>
         <div class="pricing-card pricing-card--guest">
           <div class="pricing-card-body">
-            <h3 class="pricing-plan-name">ゲスト <span class="pricing-guest-label">ログイン不要</span></h3>
+            <h3 class="pricing-plan-name"><span data-i18n="pricingGuestPlan">ゲスト</span> <span class="pricing-guest-label" data-i18n="pricingGuestLabel">ログイン不要</span></h3>
             <p class="pricing-price"><span class="currency">$</span>0<span class="period"> /mo</span></p>
-            <p class="pricing-desc">アカウント登録なしで今すぐ使える</p>
+            <p class="pricing-desc" data-i18n="pricingGuestDesc">アカウント登録なしで今すぐ使える</p>
             <ul class="pricing-features pricing-features--compact">
-              <li><i class="ri-check-line"></i> プロジェクト 3件</li>
-              <li><i class="ri-check-line"></i> スクリーンショット 月30件</li>
-              <li><i class="ri-check-line"></i> 注釈・タスク追加</li>
+              <li><i class="ri-check-line"></i> <span data-i18n="pricingFeatProjects3">プロジェクト 3件</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="pricingFeatScreens30">スクリーンショット 月30件</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="pricingFeatAnnotations">注釈・タスク追加</span></li>
             </ul>
           </div>
-          <a href="#" class="btn btn--outline"><i class="ri-chrome-fill"></i> Chromeに追加</a>
+          <a href="#" class="btn btn--outline"><i class="ri-chrome-fill"></i> <span data-i18n="ctaAddToChrome">Chromeに追加</span></a>
         </div>
         <div class="pricing-card pricing-card--free">
-          <span class="pricing-ribbon pricing-ribbon--gray">1人で利用</span>
+          <span class="pricing-ribbon pricing-ribbon--gray" data-i18n="pricingFreeRibbon">1人で利用</span>
           <div class="pricing-card-body">
-            <h3 class="pricing-plan-name">Freeプラン</h3>
+            <h3 class="pricing-plan-name" data-i18n="pricingFreePlan">Freeプラン</h3>
             <p class="pricing-price"><span class="currency">$</span>0<span class="period"> /mo</span></p>
-            <p class="pricing-desc">ログインしてクラウドに保存</p>
+            <p class="pricing-desc" data-i18n="pricingFreeDesc">ログインしてクラウドに保存</p>
             <ul class="pricing-features pricing-features--compact">
-              <li><i class="ri-check-line"></i> プロジェクト 3件</li>
-              <li><i class="ri-check-line"></i> スクリーンショット 月30件</li>
-              <li><i class="ri-check-line"></i> 注釈・タスク追加</li>
-              <li class="is-highlight"><i class="ri-check-line"></i> <strong>クラウド保存</strong></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="pricingFeatProjects3">プロジェクト 3件</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="pricingFeatScreens30">スクリーンショット 月30件</span></li>
+              <li><i class="ri-check-line"></i> <span data-i18n="pricingFeatAnnotations">注釈・タスク追加</span></li>
+              <li class="is-highlight"><i class="ri-check-line"></i> <strong data-i18n="pricingFeatCloudSave">クラウド保存</strong></li>
             </ul>
           </div>
-          <a href="#" class="btn btn--outline">無料で始める</a>
+          <a href="#" class="btn btn--outline" data-i18n="ctaStartFree">無料で始める</a>
         </div>
         <div class="pricing-card pricing-card--featured">
-          <span class="pricing-ribbon">チームで利用</span>
+          <span class="pricing-ribbon" data-i18n="pricingProRibbon">チームで利用</span>
           <div class="pricing-card-body">
-            <h3 class="pricing-plan-name">Proプラン</h3>
+            <h3 class="pricing-plan-name" data-i18n="pricingProPlan">Proプラン</h3>
             <p class="pricing-price" id="proPrice"><span class="currency">$</span><span id="proPriceAmount">9.9</span><span class="period" id="proPricePeriod"> /mo</span></p>
-            <p class="pricing-desc pricing-desc--strong">複数案件やチーム利用に最適</p>
-            <p class="pricing-includes">Freeプランの全機能 ＋</p>
+            <p class="pricing-desc pricing-desc--strong" data-i18n="pricingProDesc">複数案件やチーム利用に最適</p>
+            <p class="pricing-includes" data-i18n="pricingProIncludes">Freeプランの全機能 ＋</p>
             <ul class="pricing-features pricing-features--compact">
-              <li class="is-highlight"><i class="ri-check-line"></i> <strong>プロジェクト 無制限</strong></li>
-              <li class="is-highlight"><i class="ri-check-line"></i> <strong>スクリーンショット 無制限</strong></li>
-              <li class="is-highlight"><i class="ri-check-line"></i> <strong>共有リンクの発行・管理</strong></li>
-              <li class="is-highlight"><i class="ri-check-line"></i> <strong>チームメンバーとのタスク同期</strong></li>
+              <li class="is-highlight"><i class="ri-check-line"></i> <strong data-i18n="pricingFeatProjectsUnlimited">プロジェクト 無制限</strong></li>
+              <li class="is-highlight"><i class="ri-check-line"></i> <strong data-i18n="pricingFeatScreensUnlimited">スクリーンショット 無制限</strong></li>
+              <li class="is-highlight"><i class="ri-check-line"></i> <strong data-i18n="pricingFeatShareLinks">共有リンクの発行・管理</strong></li>
+              <li class="is-highlight"><i class="ri-check-line"></i> <strong data-i18n="pricingFeatTeamSync">チームメンバーとのタスク同期</strong></li>
             </ul>
           </div>
-          <a href="#" class="btn btn--primary" data-monthly-url="#" data-yearly-url="#">Proにアップグレード</a>
+          <a href="#" class="btn btn--primary" data-monthly-url="#" data-yearly-url="#" data-i18n="ctaUpgradeToPro">Proにアップグレード</a>
         </div>
       </div>
-      <p style="text-align:center;margin-top:32px;"><a href="./pricing.html" style="color:var(--primary);font-weight:500;">料金プランの詳細を見る &rarr;</a></p>
+      <p style="text-align:center;margin-top:32px;"><a href="./pricing.html" style="color:var(--primary);font-weight:500;" data-i18n="indexPricingMore">料金プランの詳細を見る →</a></p>
     </div>
   </section>
 
   <!-- ===== CTA ===== -->
   <section class="cta-section">
     <div class="container fade-in">
-      <h2 class="cta-title">修正依頼をもっとスムーズに</h2>
-      <p class="cta-text">FixShot で、伝わる修正依頼を始めましょう。</p>
-      <a href="#" class="btn btn--white btn--lg"><i class="ri-chrome-fill"></i> Chromeに追加 &mdash; 無料</a>
+      <h2 class="cta-title" data-i18n="indexCtaTitle">修正依頼をもっとスムーズに</h2>
+      <p class="cta-text" data-i18n="indexCtaText">FixShot で、伝わる修正依頼を始めましょう。</p>
+      <a href="#" class="btn btn--white btn--lg"><i class="ri-chrome-fill"></i> <span data-i18n="ctaAddToChromeFree">Chromeに追加 — 無料</span></a>
     </div>
   </section>
 
@@ -244,30 +252,30 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand"><img src="./assets/images/logomark_fixshot.png" alt="FixShot" class="footer-logo-img"> FixShot</div>
-          <p class="footer-about">Webページのスクリーンショットに注釈を付けて共有できる、<br>修正依頼・レビュー管理ツール。</p>
+          <p class="footer-about" data-i18n="footerAbout" data-i18n-html="1">Webページのスクリーンショットに注釈を付けて共有できる、<br>修正依頼・レビュー管理ツール。</p>
         </div>
         <div class="footer-column">
-          <h4>製品</h4>
+          <h4 data-i18n="footerProductHeading">製品</h4>
           <ul>
-            <li><a href="./features.html">機能</a></li>
-            <li><a href="./pricing.html">料金プラン</a></li>
+            <li><a href="./features.html" data-i18n="navFeatures">機能</a></li>
+            <li><a href="./pricing.html" data-i18n="footerPricingPlans">料金プラン</a></li>
           </ul>
         </div>
         <div class="footer-column">
-          <h4>サポート</h4>
+          <h4 data-i18n="footerSupportHeading">サポート</h4>
           <ul>
-            <li><a href="./guide.html">使い方</a></li>
-            <li><a href="./faq.html">FAQ</a></li>
-            <li><a href="./contact.html">お問い合わせ</a></li>
+            <li><a href="./guide.html" data-i18n="navGuide">使い方</a></li>
+            <li><a href="./faq.html" data-i18n="navFaq">FAQ</a></li>
+            <li><a href="./contact.html" data-i18n="navContact">お問い合わせ</a></li>
           </ul>
         </div>
         <div class="footer-column">
-          <h4>会社情報</h4>
+          <h4 data-i18n="footerCompanyHeading">会社情報</h4>
           <ul>
-            <li><a href="./company.html">運営者</a></li>
-            <li><a href="./terms.html">利用規約</a></li>
-            <li><a href="./privacy.html">プライバシーポリシー</a></li>
-            <li><a href="./tokushoho.html">特定商取引法に基づく表記</a></li>
+            <li><a href="./company.html" data-i18n="navAbout">運営者</a></li>
+            <li><a href="./terms.html" data-i18n="navTerms">利用規約</a></li>
+            <li><a href="./privacy.html" data-i18n="navPrivacy">プライバシーポリシー</a></li>
+            <li><a href="./tokushoho.html" data-i18n="navTokushoho">特定商取引法に基づく表記</a></li>
           </ul>
         </div>
       </div>

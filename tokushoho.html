@@ -5,126 +5,130 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>特定商取引法に基づく表記 | FixShot</title>
-  <meta name="description" content="FixShotの特定商取引法に基づく表記です。">
+  <title data-i18n="metaTokushohoTitle">特定商取引法に基づく表記 | FixShot</title>
+  <meta name="description" content="FixShotの特定商取引法に基づく表記です。" data-i18n-attr="content:metaTokushohoDescription">
+  <link rel="alternate" hreflang="en" href="https://fixshot.jp/tokushoho.html?lang=en">
+  <link rel="alternate" hreflang="ja" href="https://fixshot.jp/tokushoho.html?lang=ja">
+  <link rel="alternate" hreflang="x-default" href="https://fixshot.jp/tokushoho.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/styles.css">
+  <script src="./assets/js/i18n.js" defer></script>
 </head>
 <body>
 
-  <!-- ===== Header ===== -->
   <header class="site-header">
     <div class="container">
       <a href="./" class="header-logo"><img src="./assets/images/fixshot-logo.png" alt="FixShot" class="header-logo-img"></a>
       <nav class="header-nav">
-        <a href="./features.html">機能</a>
-        <a href="./pricing.html">料金</a>
-        <a href="./guide.html">使い方</a>
-        <a href="./faq.html">FAQ</a>
+        <a href="./features.html" data-i18n="navFeatures">機能</a>
+        <a href="./pricing.html" data-i18n="navPricing">料金</a>
+        <a href="./guide.html" data-i18n="navGuide">使い方</a>
+        <a href="./faq.html" data-i18n="navFaq">FAQ</a>
       </nav>
       <div class="header-actions">
-        <a href="#" class="btn btn--primary"><i class="ri-chrome-fill"></i> Chromeに追加</a>
-        <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-lang="en" data-i18n-attr="aria-label:ariaToggleEn">EN</button>
+          <button type="button" data-lang="ja" data-i18n-attr="aria-label:ariaToggleJa">JA</button>
+        </div>
+        <a href="#" class="btn btn--primary"><i class="ri-chrome-fill"></i> <span data-i18n="ctaAddToChrome">Chromeに追加</span></a>
+        <button class="hamburger" data-i18n-attr="aria-label:ariaMenu" aria-label="メニュー"><span></span><span></span><span></span></button>
       </div>
     </div>
   </header>
 
-  <!-- ===== Page Hero ===== -->
   <section class="page-hero">
     <div class="container fade-in">
-      <span class="section-eyebrow">Legal</span>
-      <h1 class="page-hero-title">特定商取引法に基づく表記</h1>
-      <p class="page-hero-subtitle">FixShotの販売に関する法的表記</p>
+      <span class="section-eyebrow" data-i18n="tokushohoEyebrow">Legal</span>
+      <h1 class="page-hero-title" data-i18n="tokushohoTitle">特定商取引法に基づく表記</h1>
+      <p class="page-hero-subtitle" data-i18n="tokushohoSubtitle">FixShotの販売に関する法的表記</p>
     </div>
   </section>
 
-  <!-- ===== Legal Content ===== -->
   <section class="section">
     <div class="container">
       <div class="policy-stack fade-in">
         <article class="policy-card">
-          <h2>販売事業者（Merchant of Record）</h2>
-          <p>Lemon Squeezy, LLC</p>
-          <p>所在地: 757 N Broadway, Suite 204, Milwaukee, WI 53202, USA</p>
-          <p>本サービスの販売・課金・税務処理は Lemon Squeezy が Merchant of Record として代行します。</p>
+          <h2 data-i18n="tokushohoMerchantHeading">販売事業者(Merchant of Record)</h2>
+          <p data-i18n="tokushohoMerchantName">Lemon Squeezy, LLC</p>
+          <p><span data-i18n="tokushohoMerchantAddressLabel">所在地: </span><span data-i18n="tokushohoMerchantAddress">757 N Broadway, Suite 204, Milwaukee, WI 53202, USA</span></p>
+          <p data-i18n="tokushohoMerchantNote">本サービスの販売・課金・税務処理は Lemon Squeezy が Merchant of Record として代行します。</p>
         </article>
 
         <article class="policy-card">
-          <h2>商品提供者</h2>
-          <p>Koji Yanagida</p>
+          <h2 data-i18n="tokushohoProviderHeading">商品提供者</h2>
+          <p data-i18n="tokushohoProviderName">Koji Yanagida</p>
         </article>
 
         <article class="policy-card">
-          <h2>連絡先</h2>
-          <p>お問い合わせは<a href="https://forms.gle/FvWSjGenYFNJZSbT7" target="_blank" rel="noreferrer">お問い合わせフォーム</a>よりご連絡ください。</p>
+          <h2 data-i18n="tokushohoContactHeading">連絡先</h2>
+          <p data-i18n="tokushohoContactBodyHtml" data-i18n-html="1">お問い合わせは<a href="https://forms.gle/FvWSjGenYFNJZSbT7" target="_blank" rel="noreferrer">お問い合わせフォーム</a>よりご連絡ください。</p>
         </article>
 
         <article class="policy-card">
-          <h2>販売価格</h2>
-          <p>FixShot Pro: $9.9 / mo または $99 / yr（USD・税抜）</p>
-          <p>決済時に居住国に応じた付加価値税（VAT・消費税等）が Lemon Squeezy により自動計算・徴収されます。</p>
+          <h2 data-i18n="tokushohoPriceHeading">販売価格</h2>
+          <p data-i18n="tokushohoPriceBody1">FixShot Pro: $9.9 / mo または $99 / yr(USD・税抜)</p>
+          <p data-i18n="tokushohoPriceBody2">決済時に居住国に応じた付加価値税(VAT・消費税等)が Lemon Squeezy により自動計算・徴収されます。</p>
         </article>
 
         <article class="policy-card">
-          <h2>支払い方法</h2>
-          <p>クレジットカード（Visa / Mastercard / JCB / American Express）、Apple Pay、Google Pay、PayPal（Lemon Squeezy 経由）</p>
+          <h2 data-i18n="tokushohoPaymentMethodHeading">支払い方法</h2>
+          <p data-i18n="tokushohoPaymentMethodBody">クレジットカード(Visa / Mastercard / JCB / American Express)、Apple Pay、Google Pay、PayPal(Lemon Squeezy 経由)</p>
         </article>
 
         <article class="policy-card">
-          <h2>支払い時期</h2>
-          <p>申し込み時に初回の決済が行われ、以降は選択したプランに応じて毎月または毎年自動的に課金されます。</p>
+          <h2 data-i18n="tokushohoPaymentTimingHeading">支払い時期</h2>
+          <p data-i18n="tokushohoPaymentTimingBody">申し込み時に初回の決済が行われ、以降は選択したプランに応じて毎月または毎年自動的に課金されます。</p>
         </article>
 
         <article class="policy-card">
-          <h2>サービス提供時期</h2>
-          <p>決済完了後、直ちにご利用いただけます。</p>
+          <h2 data-i18n="tokushohoDeliveryHeading">サービス提供時期</h2>
+          <p data-i18n="tokushohoDeliveryBody">決済完了後、直ちにご利用いただけます。</p>
         </article>
 
         <article class="policy-card">
-          <h2>返品・キャンセル</h2>
-          <p>デジタルサービスの性質上、返品はお受けしておりません。解約はいつでも可能で、解約後は現在の請求期間の終了まで Pro 機能を利用できます。返金は Lemon Squeezy のリファンドポリシーに準じます。</p>
+          <h2 data-i18n="tokushohoRefundHeading">返品・キャンセル</h2>
+          <p data-i18n="tokushohoRefundBody">デジタルサービスの性質上、返品はお受けしておりません。解約はいつでも可能で、解約後は現在の請求期間の終了まで Pro 機能を利用できます。返金は Lemon Squeezy のリファンドポリシーに準じます。</p>
         </article>
 
         <article class="policy-card">
-          <h2>動作環境</h2>
-          <p>Google Chrome ブラウザ（最新版を推奨）</p>
+          <h2 data-i18n="tokushohoEnvHeading">動作環境</h2>
+          <p data-i18n="tokushohoEnvBody">Google Chrome ブラウザ(最新版を推奨)</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ===== Footer ===== -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div>
           <div class="footer-brand"><img src="./assets/images/logomark_fixshot.png" alt="FixShot" class="footer-logo-img"> FixShot</div>
-          <p class="footer-about">Webページのスクリーンショットに注釈を付けて共有できる、<br>修正依頼・レビュー管理ツール。</p>
+          <p class="footer-about" data-i18n="footerAbout" data-i18n-html="1">Webページのスクリーンショットに注釈を付けて共有できる、<br>修正依頼・レビュー管理ツール。</p>
         </div>
         <div class="footer-column">
-          <h4>製品</h4>
+          <h4 data-i18n="footerProductHeading">製品</h4>
           <ul>
-            <li><a href="./features.html">機能</a></li>
-            <li><a href="./pricing.html">料金プラン</a></li>
+            <li><a href="./features.html" data-i18n="navFeatures">機能</a></li>
+            <li><a href="./pricing.html" data-i18n="footerPricingPlans">料金プラン</a></li>
           </ul>
         </div>
         <div class="footer-column">
-          <h4>サポート</h4>
+          <h4 data-i18n="footerSupportHeading">サポート</h4>
           <ul>
-            <li><a href="./guide.html">使い方</a></li>
-            <li><a href="./faq.html">FAQ</a></li>
-            <li><a href="./contact.html">お問い合わせ</a></li>
+            <li><a href="./guide.html" data-i18n="navGuide">使い方</a></li>
+            <li><a href="./faq.html" data-i18n="navFaq">FAQ</a></li>
+            <li><a href="./contact.html" data-i18n="navContact">お問い合わせ</a></li>
           </ul>
         </div>
         <div class="footer-column">
-          <h4>会社情報</h4>
+          <h4 data-i18n="footerCompanyHeading">会社情報</h4>
           <ul>
-            <li><a href="./company.html">運営者</a></li>
-            <li><a href="./terms.html">利用規約</a></li>
-            <li><a href="./privacy.html">プライバシーポリシー</a></li>
-            <li><a href="./tokushoho.html">特定商取引法に基づく表記</a></li>
+            <li><a href="./company.html" data-i18n="navAbout">運営者</a></li>
+            <li><a href="./terms.html" data-i18n="navTerms">利用規約</a></li>
+            <li><a href="./privacy.html" data-i18n="navPrivacy">プライバシーポリシー</a></li>
+            <li><a href="./tokushoho.html" data-i18n="navTokushoho">特定商取引法に基づく表記</a></li>
           </ul>
         </div>
       </div>

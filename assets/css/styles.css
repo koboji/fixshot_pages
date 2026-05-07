@@ -894,21 +894,27 @@ h1, h2, h3, h4, h5, h6 {
 .pricing-toggle-above {
   position: absolute;
   top: -30px;
-  /* Proカード（3列目）の中央に配置:
-     Proカード左端 = 66.66% + gap(28px*2/3=19px) ≈ calc(66.66% + 19px)
-     Proカード幅 ≈ calc(33.33% - 19px)
-     トグル幅 = calc(33.33% - 100px)
-     left = カード左端 + (カード幅 - トグル幅) / 2
-          = calc(66.66% + 19px) + calc((100px - 19px) / 2)
-          = calc(66.66% + 59.5px) */
-  left: calc(66.66% + 64px);
-  width: calc(33.33% - 110px);
-  display: flex;
+  /* Proカード（3列目）の中央に配置。幅は中身に合わせて伸縮するので、
+     英語の "Yearly Save 2 months" のような長いラベルでも折り返さない。
+     中心 = calc(83.33% + 9px)（カード幅を 33.33%、gap 28px と仮定したときの
+     Pro カード中心。元の left=calc(66.66% + 64px) + width=calc(33.33% - 110px) と等価）。 */
+  left: calc(83.33% + 9px);
+  transform: translateX(-50%);
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
   gap: 0;
   background: #f1f1f1;
   border-radius: var(--radius-pill);
   padding: 4px;
+  white-space: nowrap;
+}
+.pricing-toggle-above .pricing-toggle-btn {
+  white-space: nowrap;
+}
+.pricing-toggle-above .pricing-toggle-save {
+  white-space: nowrap;
 }
 
 .pricing-toggle-btn {

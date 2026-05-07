@@ -2,23 +2,39 @@
   "use strict";
 
   const STORAGE_KEY = "fixshot.lang";
-  const DEFAULT_LANG = "en";
   const SUPPORTED = ["en", "ja"];
+  // Site is fixshot.JP — Japanese is the default route. EN visitors land on /en/...
+  const DEFAULT_LANG = "ja";
+  const EN_PREFIX = "/en";
+
+  function pathStartsWithEn(pathname) {
+    return pathname === EN_PREFIX
+      || pathname === EN_PREFIX + "/"
+      || pathname.startsWith(EN_PREFIX + "/");
+  }
 
   function detectInitialLang() {
+    // 1. URL path /en/... is authoritative — the URL is the source of truth.
+    if (pathStartsWithEn(window.location.pathname)) return "en";
+
+    // 2. Legacy ?lang= query param (kept for backward compatibility / external links).
     try {
       const url = new URL(window.location.href);
       const queryLang = url.searchParams.get("lang");
       if (queryLang && SUPPORTED.includes(queryLang)) return queryLang;
     } catch (_) { /* ignore */ }
 
+    // 3. Stored preference (e.g. user toggled before).
     try {
       const stored = window.localStorage.getItem(STORAGE_KEY);
       if (stored && SUPPORTED.includes(stored)) return stored;
     } catch (_) { /* ignore */ }
 
+    // 4. Browser language for first-time visitors at the JA root.
     const nav = (navigator.language || "").toLowerCase();
     if (nav.startsWith("ja")) return "ja";
+    if (nav.startsWith("en")) return "en";
+
     return DEFAULT_LANG;
   }
 
@@ -75,7 +91,35 @@
     });
   }
 
-  async function setLang(lang) {
+  /**
+   * Build the URL to navigate to when switching to `targetLang`.
+   * Strips/adds the /en prefix and preserves search/hash.
+   */
+  function buildSwitchUrl(targetLang) {
+    const path = window.location.pathname || "/";
+    const search = window.location.search || "";
+    const hash = window.location.hash || "";
+    const onEn = pathStartsWithEn(path);
+
+    // Strip any legacy ?lang= so the URL stays clean once we switch via path.
+    const searchParams = new URLSearchParams(search);
+    searchParams.delete("lang");
+    const cleanSearch = searchParams.toString() ? "?" + searchParams.toString() : "";
+
+    if (targetLang === "en") {
+      if (onEn) return path + cleanSearch + hash;
+      const nextPath = path === "/" ? EN_PREFIX + "/" : EN_PREFIX + path;
+      return nextPath + cleanSearch + hash;
+    }
+
+    // targetLang === "ja"
+    if (!onEn) return path + cleanSearch + hash;
+    let stripped = path.slice(EN_PREFIX.length); // "/foo" or "/" or ""
+    if (stripped === "") stripped = "/";
+    return stripped + cleanSearch + hash;
+  }
+
+  async function applyLang(lang) {
     if (!SUPPORTED.includes(lang)) lang = DEFAULT_LANG;
     try {
       const dict = await loadDictionary(lang);
@@ -85,7 +129,6 @@
       syncToggle(lang);
       window.dispatchEvent(new CustomEvent("fixshot:langChange", { detail: { lang } }));
     } catch (err) {
-      // If loading fails, log but don't break the page.
       console.warn("[i18n] could not load dictionary", err);
     }
   }
@@ -99,7 +142,12 @@
       const lang = btn.getAttribute("data-lang");
       if (!SUPPORTED.includes(lang)) return;
       event.preventDefault();
-      setLang(lang);
+      // If already on the target language, do nothing.
+      if (document.documentElement.lang === lang) return;
+      // Persist preference before navigation so the new page picks it up
+      // even before its own i18n.js runs.
+      persistLang(lang);
+      window.location.assign(buildSwitchUrl(lang));
     });
   }
 
@@ -109,12 +157,16 @@
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () => {
       bindToggleClicks();
-      setLang(initial);
+      applyLang(initial);
     }, { once: true });
   } else {
     bindToggleClicks();
-    setLang(initial);
+    applyLang(initial);
   }
 
-  window.FixShotI18n = { setLang, getLang: () => document.documentElement.lang || initial };
+  window.FixShotI18n = {
+    setLang: applyLang,
+    getLang: () => document.documentElement.lang || initial,
+    switchUrl: buildSwitchUrl
+  };
 })();

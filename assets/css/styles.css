@@ -253,37 +253,48 @@ h1, h2, h3, h4, h5, h6 {
   gap: 12px;
 }
 
-/* Language toggle */
+/* Language toggle — minimal text-link style, deliberately understated
+   so it never competes with the primary "Add to Chrome" CTA. */
 .lang-toggle {
   display: inline-flex;
   align-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 999px;
-  overflow: hidden;
-  background: #fff;
+  gap: 0;
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(45, 45, 45, 0.55);
+}
+.lang-toggle .lang-toggle-icon {
+  font-size: 14px;
+  margin-right: 6px;
+  color: rgba(45, 45, 45, 0.5);
+  line-height: 1;
 }
 .lang-toggle button {
   appearance: none;
   background: transparent;
   border: none;
-  color: var(--text-dark, #2d2d2d);
+  color: rgba(45, 45, 45, 0.55);
   cursor: pointer;
-  padding: 6px 10px;
+  padding: 4px 6px;
   line-height: 1;
-  transition: background var(--transition, 0.18s) ease, color var(--transition, 0.18s) ease;
-}
-.lang-toggle button + button {
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  font: inherit;
+  letter-spacing: inherit;
+  transition: color var(--transition, 0.18s) ease;
 }
 .lang-toggle button.is-active {
-  background: var(--primary, #ff2599);
-  color: #fff;
+  color: var(--text-dark, #2d2d2d);
+  font-weight: 700;
 }
 .lang-toggle button:hover:not(.is-active) {
-  background: rgba(0, 0, 0, 0.04);
+  color: var(--text-dark, #2d2d2d);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.lang-toggle .lang-toggle-sep {
+  color: rgba(45, 45, 45, 0.25);
+  user-select: none;
+  pointer-events: none;
 }
 
 /* Hamburger */

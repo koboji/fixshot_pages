@@ -29,8 +29,7 @@
         <a href="./faq.html" data-i18n="navFaq">FAQ</a>
       </nav>
       <div class="header-actions">
-        <div class="lang-toggle" role="group" aria-label="Language"><i class="ri-global-line lang-toggle-icon" aria-hidden="true"></i><button type="button" data-lang="ja" data-i18n-attr="aria-label:ariaToggleJa">日本語</button><span class="lang-toggle-sep" aria-hidden="true">·</span><button type="button" data-lang="en" data-i18n-attr="aria-label:ariaToggleEn">English</button>
-        </div>
+        <div class="lang-switcher" data-i18n-attr="aria-label:ariaLanguage" aria-label="Language"></div>
         <a href="#" class="btn btn--primary"><i class="ri-chrome-fill"></i> <span data-i18n="ctaAddToChrome">Chromeに追加</span></a>
         <button class="hamburger" data-i18n-attr="aria-label:ariaMenu" aria-label="メニュー"><span></span><span></span><span></span></button>
       </div>
@@ -57,7 +56,7 @@
         <div class="pricing-card pricing-card--guest">
           <div class="pricing-card-body">
             <h3 class="pricing-plan-name"><span data-i18n="pricingGuestPlan">ゲスト</span> <span class="pricing-guest-label" data-i18n="pricingGuestLabel">ログイン不要</span></h3>
-            <p class="pricing-price"><span class="currency">$</span>0<span class="period"> /mo</span></p>
+            <p class="pricing-price"><span class="currency">$</span>0<span class="period" data-i18n="pricingPerMonth"> /mo</span></p>
             <p class="pricing-desc" data-i18n="pricingGuestDesc">アカウント登録なしで今すぐ使える</p>
             <ul class="pricing-features pricing-features--compact">
               <li><i class="ri-check-line"></i> <span data-i18n="pricingFeatProjects3">プロジェクト 3件</span></li>
@@ -71,7 +70,7 @@
           <span class="pricing-ribbon pricing-ribbon--gray" data-i18n="pricingFreeRibbon">1人で利用</span>
           <div class="pricing-card-body">
             <h3 class="pricing-plan-name" data-i18n="pricingFreePlan">Freeプラン</h3>
-            <p class="pricing-price"><span class="currency">$</span>0<span class="period"> /mo</span></p>
+            <p class="pricing-price"><span class="currency">$</span>0<span class="period" data-i18n="pricingPerMonth"> /mo</span></p>
             <p class="pricing-desc" data-i18n="pricingFreeDesc">ログインしてクラウドに保存</p>
             <ul class="pricing-features pricing-features--compact">
               <li><i class="ri-check-line"></i> <span data-i18n="pricingFeatProjects3">プロジェクト 3件</span></li>
@@ -86,7 +85,7 @@
           <span class="pricing-ribbon" data-i18n="pricingProRibbon">チームで利用</span>
           <div class="pricing-card-body">
             <h3 class="pricing-plan-name" data-i18n="pricingProPlan">Proプラン</h3>
-            <p class="pricing-price" id="proPrice"><span class="currency">$</span><span id="proPriceAmount">9.9</span><span class="period" id="proPricePeriod"> /mo</span></p>
+            <p class="pricing-price" id="proPrice"><span class="currency">$</span><span id="proPriceAmount">9.9</span><span class="period" id="proPricePeriod" data-i18n="pricingPerMonth"> /mo</span></p>
             <p class="pricing-desc pricing-desc--strong" data-i18n="pricingProDesc">複数案件やチーム利用に最適</p>
             <p class="pricing-includes" data-i18n="pricingProIncludes">Freeプランの全機能 ＋</p>
             <ul class="pricing-features pricing-features--compact">

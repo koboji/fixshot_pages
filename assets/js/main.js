@@ -103,18 +103,33 @@
     const period = grid?.querySelector('[id$="PricePeriod"]');
     const proBtn = grid?.querySelector('.pricing-card--featured .btn');
     if (!mBtn || !aBtn || !amount || !period) return;
+
+    let activePeriodKey = period.getAttribute('data-i18n') || 'pricingPerMonth';
+
+    const t = (key, fallback) =>
+      (window.FixShotI18n && window.FixShotI18n.t(key, fallback)) || fallback;
+
+    const renderPeriod = () => {
+      const text = t(activePeriodKey, activePeriodKey === 'pricingPerYear' ? ' /yr' : ' /mo');
+      period.textContent = text;
+    };
+
     mBtn.addEventListener('click', () => {
       mBtn.classList.add('is-active');
       aBtn.classList.remove('is-active');
       amount.textContent = '9.9';
-      period.innerHTML = ' /mo';
+      activePeriodKey = 'pricingPerMonth';
+      period.setAttribute('data-i18n', activePeriodKey);
+      renderPeriod();
       if (proBtn) proBtn.href = proBtn.dataset.monthlyUrl || '#';
     });
     aBtn.addEventListener('click', () => {
       aBtn.classList.add('is-active');
       mBtn.classList.remove('is-active');
       amount.textContent = '99';
-      period.innerHTML = ' /yr';
+      activePeriodKey = 'pricingPerYear';
+      period.setAttribute('data-i18n', activePeriodKey);
+      renderPeriod();
       if (proBtn) proBtn.href = proBtn.dataset.yearlyUrl || '#';
     });
   });

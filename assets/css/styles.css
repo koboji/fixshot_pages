@@ -253,48 +253,93 @@ h1, h2, h3, h4, h5, h6 {
   gap: 12px;
 }
 
-/* Language toggle — minimal text-link style, deliberately understated
-   so it never competes with the primary "Add to Chrome" CTA. */
-.lang-toggle {
+/* Language switcher — dropdown menu, minimal styling so it never
+   competes with the primary "Add to Chrome" CTA. Built to extend with
+   more locales (zh, ko, etc.) without markup churn. */
+.lang-switcher {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.02em;
-  color: rgba(45, 45, 45, 0.55);
 }
-.lang-toggle .lang-toggle-icon {
-  font-size: 14px;
-  margin-right: 6px;
-  color: rgba(45, 45, 45, 0.5);
-  line-height: 1;
-}
-.lang-toggle button {
+.lang-switcher-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   appearance: none;
   background: transparent;
   border: none;
-  color: rgba(45, 45, 45, 0.55);
+  color: var(--text-dark, #2d2d2d);
   cursor: pointer;
-  padding: 4px 6px;
+  padding: 6px 8px;
   line-height: 1;
   font: inherit;
-  letter-spacing: inherit;
-  transition: color var(--transition, 0.18s) ease;
+  border-radius: 6px;
+  transition: background var(--transition, 0.18s) ease;
 }
-.lang-toggle button.is-active {
+.lang-switcher-trigger:hover,
+.lang-switcher-trigger[aria-expanded="true"] {
+  background: rgba(0, 0, 0, 0.04);
+}
+.lang-switcher-trigger .lang-switcher-globe {
+  font-size: 16px;
+  color: rgba(45, 45, 45, 0.65);
+}
+.lang-switcher-trigger .lang-switcher-caret {
+  font-size: 14px;
+  color: rgba(45, 45, 45, 0.55);
+  transition: transform var(--transition, 0.18s) ease;
+}
+.lang-switcher-trigger[aria-expanded="true"] .lang-switcher-caret {
+  transform: rotate(180deg);
+}
+.lang-switcher-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 140px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 4px;
+  margin: 0;
+  list-style: none;
+  z-index: 100;
+}
+.lang-switcher-menu[hidden] {
+  display: none;
+}
+.lang-switcher-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
   color: var(--text-dark, #2d2d2d);
+  transition: background var(--transition, 0.18s) ease;
+}
+.lang-switcher-option:hover,
+.lang-switcher-option:focus {
+  background: rgba(0, 0, 0, 0.04);
+  outline: none;
+}
+.lang-switcher-option[aria-selected="true"] {
   font-weight: 700;
 }
-.lang-toggle button:hover:not(.is-active) {
-  color: var(--text-dark, #2d2d2d);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+.lang-switcher-option[aria-selected="true"]::after {
+  content: "\eb7a"; /* ri-check-line — handled by CSS class fallback below */
+  font-family: "remixicon";
+  font-weight: 400;
+  color: var(--primary, #ff2599);
+  font-size: 14px;
 }
-.lang-toggle .lang-toggle-sep {
-  color: rgba(45, 45, 45, 0.25);
-  user-select: none;
-  pointer-events: none;
+.lang-switcher-option:not([aria-selected="true"])::after {
+  content: "";
+  width: 14px;
 }
 
 /* Hamburger */
